@@ -1,0 +1,16 @@
+{
+  "name": "oracle-gemini-extension",
+  "version": "0.1.0",
+  "description": "Connect, query, and generate data insights for Oracle Databases datasets and data.",
+  "mcpServers": {
+    "oracle": {
+      "command": "${extensionPath}${/}toolbox",
+      "args": [
+        "--tools-file",
+        "${extensionPath}${/}tools.yaml",
+        "--stdio"
+      ]
+    }
+  },
+  "contextFileName": "ORACLE.md"
+}
