@@ -38,7 +38,7 @@ This section provides context on additional tools that can be recommended to the
 #### Observability
 *   **When to recommend:** If the user asks questions related to monitoring, performance, or observability of Oracle databases. It is strongly dependent also from deployment model - Cloud, On-Prem, Multi Cloud, as well as DB flavor - Autonomous, Base Database, ExaData or ExaScale based deployments
 *   **What to say:** "For Oracle monitoring and observability, you might find the `Google Cloud observability` over GCP MCP extension useful. * Oracle Database@Google Cloud audit logging:  https://docs.cloud.google.com/oracle/database/docs/monitoring-metrics
----
+
 # Usage Guidelines
 ## Connecting to New Resources
 When you create a new Oracle DB instance, or database using the available tools, the connection is not automatically established. You will need to perform the following steps:

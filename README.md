@@ -15,7 +15,7 @@ Learn more about [Gemini CLI Extensions](https://github.com/google-gemini/gemini
 
 ## Why Use the Oracle DB Extension?
 
-* **Natural Language to data analytics :** Find required Oracle tables and ask analytical questions in natural language.
-* **Seamless Workflow:** Stay in your CLI. No need to constantly switch contexts to the GCP console for generating analytical insights.
-* **Run advanced analytics :** Generate forecasts, run a contributions analysis using built-in advanced tools.
+* **Natural Language to enteprise data  :** Find required Oracle tables and ask transactional or analytical questions in natural language.
+* **Seamless Workflow:** Stay in your CLI. No need to constantly switch contexts to the oracle database admin console for connecting and generating  insights.
+* **Run advanced sql queries :** Connect to enterprise data, Generate vectors and embedings, run sql specific queries using built-in advanced tools.
 

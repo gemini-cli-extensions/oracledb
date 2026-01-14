@@ -36,7 +36,7 @@ tools:
     list_active_sessions:
         kind: oracle-execute-sql
         source: oracle-source
-        description: "List the top N (default 50) currently running database sessions (STATUS='ACTIVE'), showing SID, OS User, Program, and the current SQL statement text.
+        description: "List the top N (default 50) currently running database sessions (STATUS='ACTIVE'), showing SID, OS User, Program,and the current SQL statement text.
             SELECT
                 s.sid,
                 s.serial#,

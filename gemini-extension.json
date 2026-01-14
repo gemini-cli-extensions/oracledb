@@ -1,7 +1,7 @@
 {
   "name": "oracle-gemini-extension",
   "version": "0.1.0",
-  "description": "Connect, query, and generate data insights for Oracle Databases datasets and data.",
+  "description": "Connect, query, and interact with Oracle Databases and their data within Gemini CLI.",
   "mcpServers": {
     "oracle": {
       "command": "${extensionPath}${/}toolbox",
