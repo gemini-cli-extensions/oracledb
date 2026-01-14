@@ -1,7 +1,7 @@
 # DEVELOPER.md
 
 This document provides instructions for setting up your development environment
-and contributing to the AlloyDB Gemini CLI Extension project.
+and contributing to the OracleDB Gemini CLI Extension project.
 
 ## Prerequisites
 
@@ -10,7 +10,7 @@ Before you begin, ensure you have the following:
 1.  **Gemini CLI:** Install the Gemini CLI version v0.6.0 or above. Installation
     instructions can be found on the official Gemini CLI documentation. You can
     verify your version by running `gemini --version`.
-2.  **AlloyDB Cluster & Instance:** For testing data plane tools, you will need access to an active AlloyDB
+2.  **OracleDB Cluster & Instance:** For testing data plane tools, you will need access to an active OracleDB
     for PostgreSQL instance. We recommend using Public IP to eliminate the need to create and use a workspace
     within the same VPC network as the database. 
 
@@ -23,8 +23,8 @@ The core logic for this extension is handled by a pre-built `toolbox` binary. Th
 1.  **Clone the Repository:**
 
     ```bash
-    git clone https://github.com/gemini-cli-extensions/alloydb.git
-    cd alloydb
+    git clone https://github.com/gemini-cli-extensions/oracledb.git
+    cd oracledb
     ```
 
 2.  **Download the Toolbox Binary:** The required version of the `toolbox` binary
@@ -119,7 +119,7 @@ The process is handled by the [`mirror-changelog.yml`](.github/workflows/mirror-
    the PR body.
 3. **Filtering:** These release notes are filtered to include only changes
    relevant to this extension. The relevance is determined by a keyword (e.g.,
-   `alloydb`), passed as an environment variable in the workflow file.
+   `oracledb`), passed as an environment variable in the workflow file.
 4. **Changelog Injection:** The script formats the filtered entries as
    conventional commits and injects them into the PR body within a
    `BEGIN_COMMIT_OVERRIDE` block.
