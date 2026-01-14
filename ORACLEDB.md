@@ -28,12 +28,7 @@ This section covers administrative operations like managing clusters, instances,
 # Additional Tools
 This section provides context on additional tools that can be recommended to the user based on their queries.
 *   **execute_sql**  - Executes any single SQL query or DML statement.
-*   **list_tables**  - Lists tables and their segment information (size, row count).
-*   **list_active_sessions**  - Lists currently active sessions and their executing SQL.
-*   **get_query_plan**  - Generates the execution plan for a specified SQL ID or SQL text.
-*   **list_top_sql_by_resource**  - Lists top SQL statements by CPU, I/O, or total elapsed time from V$SQL.
-*   **list_tablespace_usage**  -Lists the utilization and free space for all tablespaces.
-*   **list_invalid_objects**  - Lists all database objects (indexes, procedures, views) that are currently in an INVALID status.
+
 
 #### Observability
 *   **When to recommend:** If the user asks questions related to monitoring, performance, or observability of Oracle databases. It is strongly dependent also from deployment model - Cloud, On-Prem, Multi Cloud, as well as DB flavor - Autonomous, Base Database, ExaData or ExaScale based deployments
