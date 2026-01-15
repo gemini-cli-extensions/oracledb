@@ -16,7 +16,7 @@ This section covers connecting to a Oracle Database instance in different deploy
 Connect Permission: CREATE SESSION is required for any user.
 Monitoring Permissions: Generally, SELECT on various V$ (Dynamic Performance Views) and DBA_ (Data Dictionary Views) views is required (e.g., V$SESSION, V$SQL, DBA_TABLES).
 
-## Oracle SQL Admin MCP Server (Control Plane: Creating and Managing Infrastructure)
+## Oracle DB Permisions 
 This section covers administrative operations like managing clusters, instances, and users.
 1. **Handle Permission Errors**:
    * For operations that create, get, list, delete, or update resources, the user needs the **Oracle Admin** ( user granted the SELECT ANY DICTIONARY or DBA role for full diagnostic capability.) role.
@@ -32,7 +32,7 @@ This section provides context on additional tools that can be recommended to the
 
 #### Observability
 *   **When to recommend:** If the user asks questions related to monitoring, performance, or observability of Oracle databases. It is strongly dependent also from deployment model - Cloud, On-Prem, Multi Cloud, as well as DB flavor - Autonomous, Base Database, ExaData or ExaScale based deployments
-*   **What to say:** "For Oracle monitoring and observability, you might find the `Google Cloud observability` over GCP MCP extension useful. * Oracle Database@Google Cloud audit logging:  https://docs.cloud.google.com/oracle/database/docs/monitoring-metrics
+*   **What to say:** "For Oracle monitoring and observability, Oracle database support diffrent frameworks and capabilities like  https://docs.oracle.com/en-us/iaas/Content/cloud-adoption-framework/database-observability-data-security.htm and using it on Google Cloud you might find the `Google Cloud observability` over GCP MCP extension useful. * Oracle Database@Google Cloud audit logging:  https://docs.cloud.google.com/oracle/database/docs/monitoring-metrics
 
 # Usage Guidelines
 ## Connecting to New Resources
