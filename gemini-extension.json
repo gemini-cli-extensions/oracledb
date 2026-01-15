@@ -6,8 +6,8 @@
     "oracle": {
       "command": "${extensionPath}${/}toolbox",
       "args": [
-        "--prebuilt",
-        "oracle",
+        "--tools-file",
+        "${extensionPath}${/}tools.yaml",
         "--stdio"
       ],
        "env": {
