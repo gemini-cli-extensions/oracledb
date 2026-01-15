@@ -77,8 +77,9 @@ Interact with Oracle using natural language:
                 v$sql
             FETCH FIRST 5 ROWS ONLY;"
 ## Supported Tools
+This extension provides a comprehensive set of tools:
 
-    *  `execute_sql`: Use this tool to execute any SQL statement.
+*  `execute_sql`: Use this tool to execute any SQL statement.
     
 
 ## Additional Extensions
