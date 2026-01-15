@@ -66,16 +66,7 @@ gemini
 
 Interact with Oracle using natural language:
  "List the top N SQL statements from the library cache based on a chosen resource metric (CPU, I/O, or Elapsed Time), following is an example of the sql" 
-            SELECT
-                sql_id,
-                executions,
-                buffer_gets,
-                disk_reads,
-                cpu_time / 1000000 AS cpu_seconds,
-                elapsed_time / 1000000 AS elapsed_seconds
-            FROM
-                v$sql
-            FETCH FIRST 5 ROWS ONLY;"
+
 ## Supported Tools
 This extension provides a comprehensive set of tools:
 
