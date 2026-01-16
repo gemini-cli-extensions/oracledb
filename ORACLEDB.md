@@ -28,9 +28,6 @@ This section covers administrative operations like managing clusters, instances,
        * Granting Roles: https://docs.oracle.com/en/database/oracle/oracle-database/26/sqlrf/GRANT.html
        * Oracle Permissions: https://docs.oracle.com/en/database/oracle/oracle-database/26/admin/managing-users-and-securing-the-database.html
 ---
-# Additional Tools
-This section provides context on additional tools that can be recommended to the user based on their queries.
-*   **execute_sql**  - Executes any single SQL query or DML statement.
 
 
 #### Observability
