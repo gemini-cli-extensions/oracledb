@@ -9,7 +9,7 @@ This section covers connecting to a Oracle Database instance in different deploy
    * `ORACLE_CONNECTION_STRING`: The Oracle Connection String .
    * `ORACLE_USER`: The reguser ion of your Oracle instance.
    * `ORACLE_PASSWORD`: The Password of your Oracle instance.
-   * `USE_OCI`: The flag true or false if your Oracle instance is deployed in and cloud deplyoment model.
+   * `ORACLE_USE_OCI`: The flag true or false if your Oracle instance is deployed in and cloud deplyoment model.
    Optional Using Wallet based authentication for cloud based deployments
    * `ORACLE_WALLET`: The wallet location of your Oracle instance if support Wallet based authentication
 
