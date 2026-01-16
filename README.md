@@ -72,8 +72,12 @@ Interact with Oracle using natural language:
 ## Supported Tools
 This extension provides a comprehensive set of tools:
 
-*  `execute_sql`: Use this tool to execute any SQL statement.
-    
+*   `execute_sql`: Use this tool to execute any SQL statement.
+*   `list_active_sessions`: Lists active database sessions.  
+*   `get_query_plan`: Gets the execution plan for a SQL statement.  
+*   `list_top_sql_by_resource`: Lists top SQL statements by resource usage.  
+*   `list_tablespace_usage`: Lists tablespace usage.  
+*   `list_invalid_objects`: Lists invalid objects.  
 
 ## Additional Extensions
 
