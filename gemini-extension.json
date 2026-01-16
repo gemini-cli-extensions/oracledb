@@ -7,13 +7,15 @@
       "command": "${extensionPath}${/}toolbox",
       "args": [
         "--tools-file",
-        "${extensionPath}${/}tools.yaml",
+        "${extensionPath}${/}oracledb.yaml",
         "--stdio"
       ],
        "env": {
         "ORACLE_CONNECTION_STRING": "$ORACLE_CONNECTION_STRING",
         "ORACLE_USER": "$ORACLE_USER",
-        "ORACLE_PASSWORD": "$ORACLE_PASSWORD"
+        "ORACLE_PASSWORD": "$ORACLE_PASSWORD",
+        "USE_OCI": "$USE_OCI",
+        "ORACLE_WALLET": "$ORACLE_WALLET_PATH"
       }
     }
   },
