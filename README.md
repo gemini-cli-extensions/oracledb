@@ -46,10 +46,8 @@ export ORACLE_USER="<your-oracle-sql-user>"
 export ORACLE_PASSWORD="<your-oracle-sql-password>"
 export USE_OCI="true or false- The flag true or false if your Oracle instance is deployed in cloud"
 
-Optional Using Wallet based authentication for cloud based deployments that supports Wallet Authentication
-export ORACLE_WALLET="your-oracle-wallet-location`:
-
-```
+# Optional Using Wallet based authentication for cloud based deployments that supports Wallet Authentication
+export ORACLE_WALLET="your-oracle-wallet-location":
 > [!NOTE]
 > If you run the Oracle DB instance in a cloud deployment model, uses private IPs, you must run Gemini CLI in the same Virtual Private Cloud (VPC) network.
 

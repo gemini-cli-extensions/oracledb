@@ -15,7 +15,7 @@
         "ORACLE_USER": "$ORACLE_USER",
         "ORACLE_PASSWORD": "$ORACLE_PASSWORD",
         "ORACLE_USE_OCI": "$ORACLE_USE_OCI",
-        "ORACLE_WALLET": "$ORACLE_WALLET_PATH"
+        "ORACLE_WALLET": "$ORACLE_WALLET"
       }
     }
   },
