@@ -1,7 +1,7 @@
 # DEVELOPER.md
 
 This document provides instructions for setting up your development environment
-and contributing to the Oracle DB Gemini CLI Extension project.
+and contributing to the OracleDB Gemini CLI Extension project.
 
 ## Prerequisites
 
@@ -10,8 +10,8 @@ Before you begin, ensure you have the following:
 1.  **Gemini CLI:** Install the Gemini CLI version v0.6.0 or above. Installation
     instructions can be found on the official Gemini CLI documentation. You can
     verify your version by running `gemini --version`.
-2.  ** Oracle DB  Cluster & Instance:** For testing data plane tools, you will need access to an active  Oracle DB 
-     instance. We recommend using Public IP to eliminate the need to create and use a workspace
+2.  **OracleDB Cluster & Instance:** For testing data plane tools, you will need access to an active 
+    Oracle DB instance. We recommend using Public IP to eliminate the need to create and use a workspace
     within the same VPC network as the database. 
 
 ## Developing the Extension
@@ -23,8 +23,8 @@ The core logic for this extension is handled by a pre-built `toolbox` binary. Th
 1.  **Clone the Repository:**
 
     ```bash
-    git clone https://github.com/gemini-cli-extensions/oracle.git
-    cd oracle
+    git clone https://github.com/gemini-cli-extensions/oracledb.git
+    cd oracledb
     ```
 
 2.  **Download the Toolbox Binary:** The required version of the `toolbox` binary
@@ -53,7 +53,7 @@ The core logic for this extension is handled by a pre-built `toolbox` binary. Th
     The CLI will prompt you to confirm the installation. Accept it to proceed.
 
 4.  **Testing Changes:** After installation, start the Gemini CLI (`gemini`).
-    You can now interact with the `oracle DB` tools to manually test your changes
+    You can now interact with the `oracledb` tools to manually test your changes
     against your connected database.
 
 ## Testing
@@ -98,7 +98,7 @@ The primary maintainers for this repository are defined in the
 [`.github/CODEOWNERS`](.github/CODEOWNERS) file:
 
 * `@gemini-cli-extensions/senseai-eco`
-* `@gemini-cli-extensions/oracle-maintainers`
+* `@gemini-cli-extensions/oracledb-maintainers`
 
 ### Releasing
 
@@ -119,6 +119,7 @@ The process is handled by the [`mirror-changelog.yml`](.github/workflows/mirror-
    the PR body.
 3. **Filtering:** These release notes are filtered to include only changes
    relevant to this extension. The relevance is determined by a keyword (e.g.,
+   `oracledb`), passed as an environment variable in the workflow file.
    `oracledb`), passed as an environment variable in the workflow file.
 4. **Changelog Injection:** The script formats the filtered entries as
    conventional commits and injects them into the PR body within a
