@@ -44,7 +44,7 @@ Set the following environment variables before starting the Gemini CLI. These va
 export ORACLE_CONNECTION_STRING="<your-oracle-connection-string>"
 export ORACLE_USER="<your-oracle-sql-user>"
 export ORACLE_PASSWORD="<your-oracle-sql-password>"
-export USE_OCI="true or false- The flag true or false if your Oracle instance is deployed in cloud"
+export ORACLE_USE_OCI="true or false- The flag true or false if your Oracle instance is deployed in cloud"
 
 # Optional Using Wallet based authentication for cloud based deployments that supports Wallet Authentication
 export ORACLE_WALLET="your-oracle-wallet-location":
