@@ -1,5 +1,5 @@
 {
-  "name": "oracle-gemini-extension",
+  "name": "oracledb",
   "version": "0.1.0",
   "description": "Connect, query, and interact with Oracle Databases and their data within Gemini CLI.",
   "mcpServers": {
@@ -9,15 +9,36 @@
         "--tools-file",
         "${extensionPath}${/}oracledb.yaml",
         "--stdio"
-      ],
-       "env": {
-        "ORACLE_CONNECTION_STRING": "$ORACLE_CONNECTION_STRING",
-        "ORACLE_USER": "$ORACLE_USER",
-        "ORACLE_PASSWORD": "$ORACLE_PASSWORD",
-        "ORACLE_USE_OCI": "$ORACLE_USE_OCI",
-        "ORACLE_WALLET": "$ORACLE_WALLET"
-      }
+      ]
     }
   },
-  "contextFileName": "ORACLEDB.md"
+  "contextFileName": "ORACLEDB.md",
+  "settings": [
+    {
+      "name": "Connection String",
+      "description": "The connection string for your Oracle database",
+      "envVar": "ORACLE_CONNECTION_STRING"
+    },
+    {
+      "name": "User",
+      "description": "Username of the database user",
+      "envVar": "ORACLE_USER"
+    },
+    {
+      "name": "Password",
+      "description": "Password of the database user",
+      "envVar": "ORACLE_PASSWORD",
+      "sensitive": true
+    },
+    {
+      "name": "Use OCI",
+      "description": "(Optional) Boolean indicating whether this Oracle instance is hosted in a cloud environment",
+      "envVar": "ORACLE_USE_OCI"
+    },
+    {
+      "name": "Wallet Location",
+      "description": "(Optional) Oracle wallet location for cloud deployments",
+      "envVar": "ORACLE_WALLET"
+    }
+  ]
 }

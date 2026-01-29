@@ -38,18 +38,39 @@ gemini extensions install https://github.com/gemini-cli-extensions/oracledb
 
 ### Configuration
 
-Set the following environment variables before starting the Gemini CLI. These variables can be loaded from a `.env` file.
+You will be prompted to configure the following settings during installation. These settings are saved in an `.env` file within the extension's directory.
+
+*   `ORACLE_CONNECTION_STRING`: The connection string for your Oracle database.
+*   `ORACLE_USER`: The database username.
+*   `ORACLE_PASSWORD`: The password for the database user.
+*   `ORACLE_USE_OCI`: (Optional) Set to `true` or `false`. Indicates if your Oracle instance is deployed in cloud.
+*   `ORACLE_WALLET`: (Optional) Your Oracle wallet location (for cloud-based deployments using Wallet authentication).
+
+To view or update your configuration:
+
+**List Settings:**
+*   Terminal: `gemini extensions list`
+*   Gemini CLI: `/extensions list`
+
+**Update Settings:**
+*   Terminal: `gemini extensions config oracledb [setting name] [--scope <scope>]`
+    *   `setting name`: (Optional) The single setting to configure.
+    *   `scope`: (Optional) The scope of the setting in (`user` or `workspace`). Defaults to `user`.
+*   Currently, you must restart the Gemini CLI for changes to take effect. We recommend using `gemini --resume` to resume your session.
+
+Alternatively, you can manually set these environment variables before starting the Gemini CLI:
 
 ```bash
 export ORACLE_CONNECTION_STRING="<your-oracle-connection-string>"
 export ORACLE_USER="<your-oracle-sql-user>"
 export ORACLE_PASSWORD="<your-oracle-sql-password>"
-export ORACLE_USE_OCI="true or false- The flag true or false if your Oracle instance is deployed in cloud"
+export ORACLE_USE_OCI="true" # Optional
+export ORACLE_WALLET="your-oracle-wallet-location" # Optional
+``` 
 
-# Optional Using Wallet based authentication for cloud based deployments that supports Wallet Authentication
-export ORACLE_WALLET="your-oracle-wallet-location":
 > [!NOTE]
-> If you run the Oracle DB instance in a cloud deployment model, uses private IPs, you must run Gemini CLI in the same Virtual Private Cloud (VPC) network.
+> * If you run the Oracle DB instance in a cloud deployment model using private IPs, you must run Gemini CLI in the same Virtual Private Cloud (VPC) network.
+> * See [Troubleshooting](#troubleshooting) for debugging your configuration.
 
 ### Start Gemini CLI
 
