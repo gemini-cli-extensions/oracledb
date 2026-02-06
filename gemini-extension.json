@@ -10,12 +10,11 @@
         "${extensionPath}${/}oracledb.yaml",
         "--stdio"
       ],
-       "env": {
-        "ORACLE_CONNECTION_STRING": "$ORACLE_CONNECTION_STRING",
+      "env": {
         "ORACLE_USER": "$ORACLE_USER",
         "ORACLE_PASSWORD": "$ORACLE_PASSWORD",
-        "ORACLE_USE_OCI": "$ORACLE_USE_OCI",
-        "ORACLE_WALLET": "$ORACLE_WALLET"
+        "ORACLE_TNS_ALIAS": "$ORACLE_TNS_ALIAS",
+        "ORACLE_TNS_ADMIN": "$ORACLE_TNS_ADMIN"
       }
     }
   },

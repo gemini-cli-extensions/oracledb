@@ -41,15 +41,15 @@ gemini extensions install https://github.com/gemini-cli-extensions/oracledb
 Set the following environment variables before starting the Gemini CLI. These variables can be loaded from a `.env` file.
 
 ```bash
-export ORACLE_CONNECTION_STRING="<your-oracle-connection-string>"
 export ORACLE_USER="<your-oracle-sql-user>"
 export ORACLE_PASSWORD="<your-oracle-sql-password>"
-export ORACLE_USE_OCI="true or false- The flag true or false if your Oracle instance is deployed in cloud"
+export ORACLE_TNS_ALIAS="<the tns alias of your oracle database>"
+export ORACLE_TNS_ADMIN="<the path to the TNS directory>"
+```
 
-# Optional Using Wallet based authentication for cloud based deployments that supports Wallet Authentication
-export ORACLE_WALLET="your-oracle-wallet-location":
 > [!NOTE]
 > If you run the Oracle DB instance in a cloud deployment model, uses private IPs, you must run Gemini CLI in the same Virtual Private Cloud (VPC) network.
+
 
 ### Start Gemini CLI
 
