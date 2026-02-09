@@ -17,9 +17,20 @@ sources:
     kind: oracle
     user: ${ORACLE_USER}
     password: ${ORACLE_PASSWORD}
-    tnsAlias: ${ORACLE_TNS_ALIAS}
-    tnsAdmin: ${ORACLE_TNS_ADMIN}
-    useOCI: true
+
+    # --- Choose one connection method ---
+    # 1. Host, Port, and Service Name
+    host: ${ORACLE_HOST:}
+    port: ${ORACLE_PORT:0}
+    serviceName: ${ORACLE_SERVICE_NAME:}
+    # 2. TNS Alias
+    tnsAlias: ${ORACLE_TNS_ALIAS:}
+    tnsAdmin: ${ORACLE_TNS_ADMIN:}
+    # 3. Direct Connection String
+    connectionString: ${ORACLE_CONNECTION_STRING:}
+    walletLocation: ${ORACLE_WALLET:}
+
+    useOCI: ${ORACLE_USE_OCI:false}
 
 tools:
   execute_sql:

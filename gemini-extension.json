@@ -1,5 +1,5 @@
 {
-  "name": "oracle-gemini-extension",
+  "name": "oracledb",
   "version": "0.1.0",
   "description": "Connect, query, and interact with Oracle Databases and their data within Gemini CLI.",
   "mcpServers": {
@@ -10,12 +10,7 @@
         "${extensionPath}${/}oracledb.yaml",
         "--stdio"
       ],
-      "env": {
-        "ORACLE_USER": "$ORACLE_USER",
-        "ORACLE_PASSWORD": "$ORACLE_PASSWORD",
-        "ORACLE_TNS_ALIAS": "$ORACLE_TNS_ALIAS",
-        "ORACLE_TNS_ADMIN": "$ORACLE_TNS_ADMIN"
-      }
+      "env": {}
     }
   },
   "contextFileName": "ORACLEDB.md"

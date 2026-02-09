@@ -39,17 +39,55 @@ gemini extensions install https://github.com/gemini-cli-extensions/oracledb
 ### Configuration
 
 Set the following environment variables before starting the Gemini CLI. These variables can be loaded from a `.env` file.
-
 ```bash
 export ORACLE_USER="<your-oracle-sql-user>"
 export ORACLE_PASSWORD="<your-oracle-sql-password>"
+```
+
+Then you need to choose one of the following connection methods:
+
+1. Host, Port, and Service Name
+```bash
+export ORACLE_HOST="<your-oracle-host>"
+export ORACLE_PORT="<your-oracle-port>"
+export ORACLE_SERVICE_NAME="<your-oracle-service-name>"
+```
+
+2. TNS Alias
+```bash
 export ORACLE_TNS_ALIAS="<the tns alias of your oracle database>"
 export ORACLE_TNS_ADMIN="<the path to the TNS directory>"
 ```
 
-> [!NOTE]
-> If you run the Oracle DB instance in a cloud deployment model, uses private IPs, you must run Gemini CLI in the same Virtual Private Cloud (VPC) network.
+3. Direct Connection String
+```bash
+export ORACLE_CONNECTION_STRING="<the connection string of your oracle database>"
+```
 
+#### Oracle Wallet / OCI databases
+
+If you wish to use the Oracle Wallet, you can configure the following variable:
+
+```bash
+export ORACLE_WALLET="/path/to/my/wallet/directory"
+```
+
+Example:
+
+```bash
+export ORACLE_CONNECTION_STRING="127.0.0.1:1521/XEPDB1"
+export ORACLE_USER="myuser"
+export ORACLE_PASSWORD="mypassword"
+export ORACLE_TNS_ALIAS="SECURE_DB_ALIAS"
+export ORACLE_WALLET="/path/to/my/wallet/directory"
+```
+
+For OCI-based databases, the wallet authentication is triggered by setting tnsAdmin to the wallet directory and connecting via a tnsAlias.
+You need to specify the following variable:
+
+```bash
+export ORACLE_USE_OCI=true
+```
 
 ### Start Gemini CLI
 
