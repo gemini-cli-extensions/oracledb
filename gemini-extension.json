@@ -1,5 +1,5 @@
 {
-  "name": "oracle-gemini-extension",
+  "name": "oracledb",
   "version": "0.1.0",
   "description": "Connect, query, and interact with Oracle Databases and their data within Gemini CLI.",
   "mcpServers": {
@@ -10,14 +10,61 @@
         "${extensionPath}${/}oracledb.yaml",
         "--stdio"
       ],
-       "env": {
-        "ORACLE_CONNECTION_STRING": "$ORACLE_CONNECTION_STRING",
-        "ORACLE_USER": "$ORACLE_USER",
-        "ORACLE_PASSWORD": "$ORACLE_PASSWORD",
-        "ORACLE_USE_OCI": "$ORACLE_USE_OCI",
-        "ORACLE_WALLET": "$ORACLE_WALLET"
-      }
+      "env": {}
     }
   },
-  "contextFileName": "ORACLEDB.md"
+  "contextFileName": "ORACLEDB.md",
+  "settings": [
+    {
+      "name": "User",
+      "description": "Username for the Oracle connection",
+      "envVar": "ORACLE_USER"
+    },
+    {
+      "name": "Password",
+      "description": "Password for the Oracle connection",
+      "envVar": "ORACLE_PASSWORD",
+      "sensitive": true
+    },
+    {
+      "name": "Use OCI",
+      "description": "Set to true to use OCI driver (godror), false for pure Go driver",
+      "envVar": "ORACLE_USE_OCI"
+    },
+    {
+      "name": "Host",
+      "description": "Oracle Database Host (for Host/Port/Service Name connection)",
+      "envVar": "ORACLE_HOST"
+    },
+    {
+      "name": "Port",
+      "description": "Oracle Database Port (for Host/Port/Service Name connection)",
+      "envVar": "ORACLE_PORT"
+    },
+    {
+      "name": "Service Name",
+      "description": "Oracle Service Name (for Host/Port/Service Name connection)",
+      "envVar": "ORACLE_SERVICE_NAME"
+    },
+    {
+      "name": "TNS Alias",
+      "description": "TNS Alias (for TNS connection)",
+      "envVar": "ORACLE_TNS_ALIAS"
+    },
+    {
+      "name": "TNS Admin",
+      "description": "Path to directory containing tnsnames.ora (required for TNS/Wallet with OCI)",
+      "envVar": "ORACLE_TNS_ADMIN"
+    },
+    {
+      "name": "Connection String",
+      "description": "Direct Connection String (EZConnect or similar)",
+      "envVar": "ORACLE_CONNECTION_STRING"
+    },
+    {
+      "name": "Wallet Location",
+      "description": "Path to Wallet directory (for pure Go driver with Wallet)",
+      "envVar": "ORACLE_WALLET"
+    }
+  ]
 }
