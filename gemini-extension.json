@@ -16,55 +16,55 @@
   "contextFileName": "ORACLEDB.md",
   "settings": [
     {
-      "name": "User",
-      "description": "Username for the Oracle connection",
+      "name": "(Required) User",
+      "description": "Required. Username for the Oracle connection.",
       "envVar": "ORACLE_USER"
     },
     {
-      "name": "Password",
-      "description": "Password for the Oracle connection",
+      "name": "(Required) Password",
+      "description": "Required. Password for the Oracle connection.",
       "envVar": "ORACLE_PASSWORD",
       "sensitive": true
     },
     {
-      "name": "Use OCI",
-      "description": "Set to true to use OCI driver (godror), false for pure Go driver",
-      "envVar": "ORACLE_USE_OCI"
-    },
-    {
-      "name": "Host",
-      "description": "Oracle Database Host (for Host/Port/Service Name connection)",
+      "name": "(Connection Method: Host/Port/Service) Host",
+      "description": "For Host/Port/Service connection. Use with ORACLE_PORT and ORACLE_SERVICE_NAME. Mutually exclusive with TNS Alias and Connection String methods.",
       "envVar": "ORACLE_HOST"
     },
     {
-      "name": "Port",
-      "description": "Oracle Database Port (for Host/Port/Service Name connection)",
+      "name": "(Connection Method: Host/Port/Service) Port",
+      "description": "For Host/Port/Service connection. Use with ORACLE_HOST and ORACLE_SERVICE_NAME.",
       "envVar": "ORACLE_PORT"
     },
     {
-      "name": "Service Name",
-      "description": "Oracle Service Name (for Host/Port/Service Name connection)",
+      "name": "(Connection Method: Host/Port/Service) Service Name",
+      "description": "For Host/Port/Service connection. Use with ORACLE_HOST and ORACLE_PORT.",
       "envVar": "ORACLE_SERVICE_NAME"
     },
     {
-      "name": "TNS Alias",
-      "description": "TNS Alias (for TNS connection)",
+      "name": "(Connection Method: TNS) TNS Alias",
+      "description": "For TNS connection. Use with ORACLE_TNS_ADMIN. Mutually exclusive with Host/Port/Service and Connection String methods.",
       "envVar": "ORACLE_TNS_ALIAS"
     },
     {
-      "name": "TNS Admin",
-      "description": "Path to directory containing tnsnames.ora (required for TNS/Wallet with OCI)",
+      "name": "(Connection Method: TNS) TNS Admin",
+      "description": "For TNS connection. Path to directory containing tnsnames.ora. Use with ORACLE_TNS_ALIAS.",
       "envVar": "ORACLE_TNS_ADMIN"
     },
     {
-      "name": "Connection String",
-      "description": "Direct Connection String (EZConnect or similar)",
+      "name": "(Connection Method: Direct) Connection String",
+      "description": "For Direct Connection String (EZConnect). Mutually exclusive with Host/Port/Service and TNS Alias methods.",
       "envVar": "ORACLE_CONNECTION_STRING"
     },
     {
-      "name": "Wallet Location",
-      "description": "Path to Wallet directory (for pure Go driver with Wallet)",
+      "name": "(Optional) Wallet Location",
+      "description": "Optional. Path to Wallet directory. May be required for secure connections.",
       "envVar": "ORACLE_WALLET"
+    },
+    {
+      "name": "(Optional) Use OCI",
+      "description": "Optional. Set to 'true' to use the OCI (thick client) driver, which is required for some connection types like Wallet authentication.",
+      "envVar": "ORACLE_USE_OCI"
     }
   ]
 }
