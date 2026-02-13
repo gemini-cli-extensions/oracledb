@@ -4,20 +4,39 @@ To install this extension, the Gemini CLI version must be v0.6.0 or above. The v
 gemini extensions install https://github.com/gemini-cli-extensions/oracledb
 
 ## Oracle Database MCP Server (Data Plane: Connecting and Querying)
-This section covers connecting to a Oracle Database instance in different deployments  and client configurations.
-1. **Verify Environment Variables**: The extension requires the following environment variables to be set before the Gemini CLI is started:
-   * `ORACLE_CONNECTION_STRING`: The Oracle Connection String .
-   * `ORACLE_USER`: The reguser ion of your Oracle instance.
-   * `ORACLE_PASSWORD`: The Password of your Oracle instance.
-   * `ORACLE_USE_OCI`: The flag true or false if your Oracle instance is deployed in and cloud deplyoment model.
-   Optional Using Wallet based authentication for cloud based deployments
-   * `ORACLE_WALLET`: The wallet location of your Oracle instance if support Wallet based authentication
+This section covers connecting to a Oracle Database instance in different deployments and client configurations.
 
-2. **Handle Missing Variables**: If a command fails with an error message containing a placeholder like `$`, it signifies a missing environment variable. Inform the user which variable is missing and instruct them to set it.
+### 1. Authentication
+Set the following environment variables before starting the Gemini CLI.
 
-3. **Handle Permission Errors**: If you encounter permission errors, ensure the user has the **Oracle SQL Client** role and the correct database-level permissions.
-Connect Permission: CREATE SESSION is required for any user.
-Monitoring Permissions: Generally, SELECT on various V$ (Dynamic Performance Views) and DBA_ (Data Dictionary Views) views is required (e.g., V$SESSION, V$SQL, DBA_TABLES).
+* `ORACLE_USER`: Your Oracle database username.
+* `ORACLE_PASSWORD`: Your Oracle database password.
+
+### 2. Connection Method
+Choose **one** of the following connection methods and set the corresponding environment variables:
+
+#### Method A: Host, Port, and Service Name
+*   `ORACLE_HOST`: The hostname or IP address of your Oracle Database server.
+*   `ORACLE_PORT`: The port number your Oracle Database is listening on.
+*   `ORACLE_SERVICE_NAME`: The service name for the Oracle Database.
+
+#### Method B: TNS Alias
+*   `ORACLE_TNS_ALIAS`: The TNS alias of your Oracle Database from your `tnsnames.ora` file.
+*   `ORACLE_TNS_ADMIN`: The path to the directory containing your `tnsnames.ora` file.
+
+#### Method C: Direct Connection String
+*   `ORACLE_CONNECTION_STRING`: The direct connection string for your Oracle Database (e.g., in EZConnect format).
+
+### 3. Optional Configuration
+
+#### Oracle Wallet / OCI
+If you are connecting to an OCI-based database or using an Oracle Wallet:
+*   `ORACLE_WALLET`: Path to the directory containing your Oracle Wallet files.
+*   `ORACLE_USE_OCI`: Set to `true` to use the OCI (thick client) driver. This is typically required for wallet authentication. When using wallet authentication, the `ORACLE_TNS_ADMIN` variable should be set to the wallet directory path, and you should connect using a TNS alias.
+
+### 4. Troubleshooting
+*   **Missing Variables**: If a command fails with an error related to a missing configuration, it signifies a missing environment variable. Please review the setup instructions and ensure the necessary variables are set.
+*   **Permission Errors**: If you encounter permission errors, ensure the user has the required database-level permissions. `CREATE SESSION` is required for any user to connect. For monitoring and diagnostic tools, `SELECT` privileges on various `V$` (Dynamic Performance Views) and `DBA_` (Data Dictionary Views) are often necessary.
 
 ## Oracle DB Permisions 
 This section covers administrative operations like managing clusters, instances, and users.
