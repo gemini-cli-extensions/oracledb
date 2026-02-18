@@ -36,4 +36,4 @@ jobs:
       - name: Install Extension
         env:
           GEMINI_API_KEY: "placeholder"
-        run: jq . gemini-extension.json # yes | npx gemini extensions install .
+        run: gemini extensions validate .
