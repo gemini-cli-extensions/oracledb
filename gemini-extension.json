@@ -13,58 +13,5 @@
       "env": {}
     }
   },
-  "contextFileName": "ORACLEDB.md",
-  "settings": [
-    {
-      "name": "User",
-      "description": "Required. Username for the Oracle connection.",
-      "envVar": "ORACLE_USER"
-    },
-    {
-      "name": "Password",
-      "description": "Required. Password for the Oracle connection.",
-      "envVar": "ORACLE_PASSWORD",
-      "sensitive": true
-    },
-    {
-      "name": "Host",
-      "description": "For Host/Port/Service connection. Use with Port and Service name. Mutually exclusive with TNS Alias and Connection String methods.",
-      "envVar": "ORACLE_HOST"
-    },
-    {
-      "name": "Port",
-      "description": "For Host/Port/Service connection. Use with Host and Service name. Mutually exclusive with TNS Alias and Connection String methods.",
-      "envVar": "ORACLE_PORT"
-    },
-    {
-      "name": "Service Name",
-      "description": "For Host/Port/Service connection. Use with Host and Port. Mutually exclusive with TNS Alias and Connection String methods.",
-      "envVar": "ORACLE_SERVICE_NAME"
-    },
-    {
-      "name": "TNS Alias",
-      "description": "For TNS connection. Use with TNS Admin. Mutually exclusive with Host/Port/Service and Connection String methods.",
-      "envVar": "ORACLE_TNS_ALIAS"
-    },
-    {
-      "name": "TNS Admin",
-      "description": "For TNS connection. Path to TNS directory. Use with TNS Alias. Mutually exclusive with Host/Port/Service and Connection String methods.",
-      "envVar": "ORACLE_TNS_ADMIN"
-    },
-    {
-      "name": "Connection String",
-      "description": "For Direct Connection String. Mutually exclusive with Host/Port/Service and TNS Alias methods.",
-      "envVar": "ORACLE_CONNECTION_STRING"
-    },
-    {
-      "name": "Wallet Location",
-      "description": "Optional. Path to Wallet directory. May be required for secure connections.",
-      "envVar": "ORACLE_WALLET"
-    },
-    {
-      "name": "Use OCI",
-      "description": "Optional. Set to 'true' to use the OCI (thick client) driver, which is required for some connection types like Wallet authentication.",
-      "envVar": "ORACLE_USE_OCI"
-    }
-  ]
+  "contextFileName": "ORACLEDB.md"
 }
