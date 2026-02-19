@@ -1,6 +1,6 @@
 {
   "name": "oracledb",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Connect, query, and interact with Oracle Databases and their data within Gemini CLI.",
   "mcpServers": {
     "oracle": {
