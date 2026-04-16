@@ -1,27 +1,26 @@
 # Setup
+
 ## Required Gemini CLI Version
+
 To install this extension, the Gemini CLI version must be v0.6.0 or above. The version can be found by running: `gemini --version`.
-gemini extensions install https://github.com/gemini-cli-extensions/oracledb
 
 ## Oracle Database MCP Server (Data Plane: Connecting and Querying)
-This section covers connecting to a Oracle Database instance in different deployments and client configurations.
 
-### 1. Authentication
-Set the following environment variables before starting the Gemini CLI.
+This section covers connecting to an Oracle Database instance.
 
+1. **Extension Configuration**: This extension requires several settings (e.g., Connection String, Username, Password, and optionally Wallet Path and Use OCI). These values are gathered via prompts when you first install or link the extension:
+
+* `ORACLE_CONNECTION_STRING`: The connection string for your Oracle Database (e.g., `host:port/service_name` or TNS alias).
 * `ORACLE_USERNAME`: Your Oracle database username.
 * `ORACLE_PASSWORD`: Your Oracle database password.
+* `ORACLE_WALLET`: (Optional) Path to the directory containing your Oracle Wallet files.
+* `ORACLE_USE_OCI`: (Optional) Set to `true` to use the OCI (thick client) driver.
 
-### 2. Connection Method
-*   `ORACLE_CONNECTION_STRING`: The connection string for your Oracle Database (e.g., `host:port/service_name` or TNS alias).
+If you need to update any of these values later, use the `gemini extensions config oracledb` command.
 
-### 3. Optional Configuration
-*   `ORACLE_WALLET`: Path to the directory containing your Oracle Wallet files.
-*   `ORACLE_USE_OCI`: Set to `true` to use the OCI (thick client) driver.
+2. **Handle Missing Variables**: If a command fails with an error related to a missing configuration, it signifies a missing environment variable. Inform the user which variable is missing and instruct them to set it.
 
-### 4. Troubleshooting
-*   **Missing Variables**: If a command fails with an error related to a missing configuration, it signifies a missing environment variable. Please review the setup instructions and ensure the necessary variables are set.
-*   **Permission Errors**: If you encounter permission errors, ensure the user has the required database-level permissions. `CREATE SESSION` is required for any user to connect. For monitoring and diagnostic tools, `SELECT` privileges on various `V$` (Dynamic Performance Views) and `DBA_` (Data Dictionary Views) are often necessary.
+3. **Handle Permission Errors**: If you encounter permission errors, ensure the user has the required database-level permissions. `CREATE SESSION` is required for any user to connect. For monitoring and diagnostic skills, `SELECT` privileges on various `V$` (Dynamic Performance Views) and `DBA_` (Data Dictionary Views) are often necessary.
 
 ## Oracle DB Permisions 
 This section covers administrative operations like managing clusters, instances, and users.
@@ -40,14 +39,15 @@ This section covers administrative operations like managing clusters, instances,
 
 # Usage Guidelines
 ## Connecting to New Resources
-When you create a new Oracle DB instance, or database using the available tools, the connection is not automatically established. You will need to perform the following steps:
+When you create a new Oracle DB instance, or database using the available skills, the connection is not automatically established. You will need to perform the following steps:
 
 1.  **(Optional) Save your conversation:** To avoid losing your progress, save the current session by running the command: `/chat save <your-tag>`
 2.  **Stop the CLI:** Terminate the Gemini CLI.
-3.  **Update Environment Variables:** Set or update your environment variables (e.g. `ORACLE_CONNECTION_STRING`, `ORACLE_USERNAME`) to point to the new resource.
+3.  **Update Extension Configuration:** Use the command `gemini extensions config oracledb` to update your settings (e.g. `ORACLE_CONNECTION_STRING`, `ORACLE_USERNAME`) to point to the new resource.
 4.  **Restart:** Relaunch the Gemini CLI
 5.  **(Optional) Resume conversation:** Resume your conversation with the command: `/chat resume <your-tag>`
 
 **Important:** Do not assume a connection to a newly created resource is active. Always follow the steps above to reconfigure your connection.
-Instead of prompting the user for these values for specific tool calls, prompt the user to verify reuse of a specific value.
-Make sure to not use the environment variable names like `ORACLE_CONNECTION_STRING`, `${ORACLE_CONNECTION_STRING}`, or `$ORACLE_CONNECTION_STRING`. The value can be found by using command: `echo $ORACLE_USERNAME`.
+Instead of prompting the user for these values for specific skill calls, prompt the user to verify the reuse of a specific setting value.
+Make sure to not use the environment variable names like `ORACLE_CONNECTION_STRING`, `${ORACLE_CONNECTION_STRING}`, or `$ORACLE_CONNECTION_STRING`.
+The value can be verified by the user using the `gemini extensions config oracledb` command or by checking their local settings.
