@@ -25,4 +25,4 @@ Checks the status and usage of JSON features in the database.
 
 ## Sources
 - [Oracle Database JSON Developer's Guide](https://docs.oracle.com/en/database/oracle/oracle-database/19/adjsn/index.html)
-- [Oracle Database 23c New Features](https://docs.oracle.com/en/database/oracle/oracle-database/23/nfdoc/index.html)
+- [Oracle Database 23c New Features](https://github.com/oracle-devrel/technology-engineering/tree/main/data-platform/core-converged-db/database-23ai)

@@ -23,4 +23,4 @@ Lists cluster nodes in a RAC environment.
 - Baseline guidance is valid for Oracle 19c.
 
 ## Sources
-- [Oracle Database High Availability Guide](https://docs.oracle.com/en/database/oracle/oracle-database/19/haall/index.html)
+- [Oracle Database High Availability Guide](https://docs.oracle.com/en/database/oracle/oracle-database/19/high-availability.html)
