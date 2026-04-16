@@ -1,11 +1,10 @@
-# Gemini CLI Extension - Oracle Database
+# Oracle Database Agent Skills
 
 > [!NOTE]
-> This extension is currently in beta (pre-v1.0), and may see breaking changes until the first stable release (v1.0).
+> Currently in beta (pre-v1.0), and may see breaking changes until the first stable release (v1.0).
 
-Developers and Engineers can effortlessly connect, interact, and generate data insights with [OracleDB](https://www.oracle.com/database/) datasets and data using natural language commands.
+This repository provides a set of agent skills to interact with [Oracle Database](https://www.oracle.com/database/) instances. These skills can be used with various AI agents, including [Gemini CLI](https://google-gemini.github.io/gemini-cli/), Claude Code, and Codex, to manage your databases, execute queries, explore schemas, and troubleshoot issues using natural language prompts.
 
-Learn more about [Gemini CLI Extensions](https://github.com/google-gemini/gemini-cli/blob/main/docs/extensions/index.md).
 > [!IMPORTANT]
 > **We Want Your Feedback!**
 > Please share your thoughts with us by filling out our feedback [form][form].
@@ -15,7 +14,7 @@ Learn more about [Gemini CLI Extensions](https://github.com/google-gemini/gemini
 
 ## Table of Contents
 
-- [Why Use Oracle DB Agent Skills?](#why-use-oracle-db-agent-skills)
+- [Why Use Oracle Database Agent Skills?](#why-use-oracle-database-agent-skills)
 - [Prerequisites](#prerequisites)
 - [Getting Started](#getting-started)
   - [Configuration](#configuration)
@@ -26,101 +25,70 @@ Learn more about [Gemini CLI Extensions](https://github.com/google-gemini/gemini
     - [Antigravity](#antigravity)
 - [Usage Examples](#usage-examples)
 - [Supported Skills](#supported-skills)
+- [Additional Agent Skills](#additional-agent-skills)
 - [Troubleshooting](#troubleshooting)
 
-## Why Use the Oracle DB Extension?
-
-- **Natural Language to enteprise data  :** Find required Oracle tables and ask transactional or analytical questions in natural language.
-- **Seamless Workflow:** Stay in your CLI. No need to constantly switch contexts to the oracle database admin console for connecting and generating  insights.
-- **Run advanced sql queries :** Connect to enterprise data, Generate vectors and embedings, run sql specific queries using built-in advanced tools.
-
-## Why Use Oracle DB Agent Skills?
+## Why Use Oracle Database Agent Skills?
 
 - **Seamless Workflow:** Integrates seamlessly into your AI agent's environment. No need to constantly switch contexts for common database tasks.
 - **Natural Language Queries:** Stop wrestling with complex commands. Explore schemas and query data by describing what you want in plain English.
-- **Full Lifecycle Control:** Manage the entire lifecycle of your database, from creating instances to exploring schemas and running queries.
+- **Full Database Insights:** Monitor active sessions, analyze query plans, and manage tablespace usage using natural language.
 - **Code Generation:** Accelerate development by asking your agent to generate data classes and other code snippets based on your table schemas.
 
 ## Prerequisites
 
 Before you begin, ensure you have the following:
 
-- [Gemini CLI](https://github.com/google-gemini/gemini-cli) installed with version **+v0.6.0**.
-- Setup Gemini CLI [Authentication](https://github.com/google-gemini/gemini-cli/tree/main?tab=readme-ov-file#-authentication-options).
+- One of these AI agents installed:
+  - [Gemini CLI](https://github.com/google-gemini/gemini-cli) version **v0.6.0** or higher
+  - [Claude Code](https://claude.com/product/claude-code) version **v2.1.94** or higher
+  - [Codex](https://developers.openai.com/codex) **v0.117.0** or higher
+  - [Antigravity](https://antigravity.google) **v1.14.2** or higher
+- Access to an Oracle Database instance.
+- Oracle Database permissions:
+  - `CREATE SESSION` for basic connectivity.
+  - `SELECT` privileges on `V$` and `DBA_` views for monitoring and diagnostics.
 
 ## Getting Started
 
+### Configuration
+
+Please keep these settings handy during the installation process:
+
+- `ORACLE_CONNECTION_STRING`: The connection string for your Oracle Database (e.g., `host:port/service_name` or TNS alias).
+- `ORACLE_USERNAME`: Your Oracle database username.
+- `ORACLE_PASSWORD`: Your Oracle database password.
+- `ORACLE_WALLET`: (Optional) Path to the directory containing your Oracle Wallet files.
+- `ORACLE_USE_OCI`: (Optional) Set to `true` to use the OCI (thick client) driver.
+
 ### Installation & Usage
+
+To start interacting with your database, install the skills for your preferred AI agent, then launch the agent and use natural language to ask questions or perform tasks.
+
+For the latest version, check the [releases page][releases].
+
+[releases]: https://github.com/gemini-cli-extensions/oracledb/releases
+
+<!-- {x-release-please-start-version} -->
 
 <details open>
 <summary id="gemini-cli">Gemini CLI</summary>
 
-To install the extension, use the command:
+**1. Install the extension:**
 
 ```bash
 gemini extensions install https://github.com/gemini-cli-extensions/oracledb
 ```
 
-### Configuration
+During the installation, enter your configuration settings as described in the [configuration section](#configuration).
 
-Set the following environment variables before starting the Gemini CLI. These variables can be loaded from a `.env` file.
+**2. (Optional) Manage Configuration:**
+To view or update your configuration in Gemini CLI:
 
-```bash
-export ORACLE_USER="<your-oracle-sql-user>"
-export ORACLE_PASSWORD="<your-oracle-sql-password>"
-```
+- Terminal: `gemini extensions config oracledb [setting name] [--scope <scope>]`
+- Gemini CLI: `/extensions list`
 
-Then you need to choose one of the following connection methods:
-
-1. Host, Port, and Service Name
-
-```bash
-export ORACLE_HOST="<your-oracle-host>"
-export ORACLE_PORT="<your-oracle-port>"
-export ORACLE_SERVICE_NAME="<your-oracle-service-name>"
-```
-
-1. TNS Alias
-
-```bash
-export ORACLE_TNS_ALIAS="<the tns alias of your oracle database>"
-export ORACLE_TNS_ADMIN="<the path to the TNS directory>"
-```
-
-1. Direct Connection String
-
-```bash
-export ORACLE_CONNECTION_STRING="<the connection string of your oracle database>"
-```
-
-#### Oracle Wallet / OCI databases
-
-If you wish to use the Oracle Wallet, you can configure the following variable:
-
-```bash
-export ORACLE_WALLET="/path/to/my/wallet/directory"
-```
-
-Example:
-
-```bash
-export ORACLE_CONNECTION_STRING="127.0.0.1:1521/XEPDB1"
-export ORACLE_USER="myuser"
-export ORACLE_PASSWORD="mypassword"
-export ORACLE_TNS_ALIAS="SECURE_DB_ALIAS"
-export ORACLE_WALLET="/path/to/my/wallet/directory"
-```
-
-For OCI-based databases, the wallet authentication is triggered by setting tnsAdmin to the wallet directory and connecting via a tnsAlias.
-You need to specify the following variable:
-
-```bash
-export ORACLE_USE_OCI=true
-```
-
-### Start Gemini CLI
-
-To start the Gemini CLI, use the following command:
+**3. Start the agent:**
 
 ```bash
 gemini
@@ -129,8 +97,8 @@ gemini
 _(Tip: Run `/extensions list` to verify your configuration and active extensions.)_
 
 > [!WARNING]
-> **Changing Instance & Database Connections**
-> Currently, the database connection must be configured before starting the agent and can not be changed during a session.
+> **Changing Database Connections**
+> Currently, the database connection must be configured before starting the agent and cannot be changed during a session.
 > To save and resume conversation history in Gemini CLI use command: `/chat save <tag>` and `/chat resume <tag>`.
 
 </details>
@@ -150,7 +118,7 @@ claude
 **3. Add the marketplace:**
 
 ```bash
-/plugin marketplace add https://github.com/gemini-cli-extensions/oracledb.git#0.4.0
+/plugin marketplace add https://github.com/gemini-cli-extensions/oracledb.git#0.1.1
 ```
 
 **4. Install the plugin:**
@@ -169,7 +137,7 @@ _(Tip: Run `/plugin list` inside Claude Code to verify the plugin is active, or 
 **1. Clone the Repo:**
 
 ```bash
-git clone --branch 0.4.0 git@github.com:gemini-cli-extensions/oracledb.git
+git clone --branch 0.1.1 git@github.com:gemini-cli-extensions/oracledb.git
 ```
 
 **2. Install the plugin:**
@@ -187,7 +155,7 @@ Enter your environment vars as described in the [configuration section](#configu
 
 ```json
 {
-  "name": "my-data-cloud-google-marketplace",
+  "name": "my-google-data-cloud-marketplace",
   "interface": {
     "displayName": "Google Data Cloud Skills"
   },
@@ -218,13 +186,12 @@ _(Tip: Run `codex plugin list` or use the `/plugins` interactive menu to verify 
 **1. Clone the Repo:**
 
 ```bash
-git clone --branch 0.4.0 https://github.com/gemini-cli-extensions/oracledb.git
+git clone --branch 0.1.1 https://github.com/gemini-cli-extensions/oracledb.git
 ```
 
 **2. Install the skills:**
 
 Choose a location for the skills:
-
 - **Global (all workspaces):** `~/.gemini/antigravity/skills/`
 - **Workspace-specific:** `<workspace-root>/.agents/skills/`
 
@@ -243,30 +210,29 @@ _(Tip: Antigravity automatically discovers skills in these directories at the st
 
 <!-- {x-release-please-end} -->
 
-> [!WARNING]
-> **Changing Instance & Database Connections**
-> Currently, the database connection must be configured before starting the Gemini CLI and can not be changed during a session.
-> To save and resume conversation history use command: `/chat save <tag>` and `/chat resume <tag>`.
-
 ## Usage Examples
 
-Interact with Oracle using natural language:
- "List the top N SQL statements from the library cache based on a chosen resource metric (CPU, I/O, or Elapsed Time), following is an example of the sql"
+Interact with Oracle Database using natural language:
 
-## Supported Tools
+- **Query Data:**
+  - "Show me the first 10 rows from the EMPLOYEES table."
+  - "What is the total salary by department?"
+- **Monitor and Analyze:**
+  - "List all active sessions."
+  - "Explain the execution plan for this query: SELECT * FROM orders WHERE order_id = 100"
+  - "What is the tablespace usage?"
+- **Object Health:**
+  - "List all invalid objects in the schema."
 
-This extension provides a comprehensive set of tools:
+## Supported Skills
 
-- `execute_sql`: Use this tool to execute any SQL statement.
-- `list_active_sessions`: Lists active database sessions.  
-- `get_query_plan`: Gets the execution plan for a SQL statement.  
-- `list_top_sql_by_resource`: Lists top SQL statements by resource usage.  
-- `list_tablespace_usage`: Lists tablespace usage.  
-- `list_invalid_objects`: Lists invalid objects.  
+The following skills are available in this repository:
 
-## Additional Extensions
+- [Oracle Database Skills](./skills/oracledb/SKILL.md) - Use these skills to manage and monitor Oracle databases by executing SQL statements, exploring schema metadata, analyzing query performance, monitoring active sessions and resource consumption, and managing storage and object health.
 
-Find additional extensions to support your entire software development lifecycle at [github.com/gemini-cli-extensions](https://github.com/gemini-cli-extensions)
+## Additional Agent Skills
+
+Find additional skills to support your entire software development lifecycle at [github.com/gemini-cli-extensions](https://github.com/gemini-cli-extensions).
 
 ## Supported Skills
 
@@ -281,10 +247,10 @@ The following skills are available in this repository:
 
 ## Troubleshooting
 
-Use `gemini --debug` to enable debugging.
+Use the debug mode of your agent (e.g., `gemini --debug`) to enable debugging.
 
 Common issues:
 
-- "✖ Error during discovery for server: MCP error -32000: Connection closed": The database connection has not been established. Ensure your configuration is set via environment variables.
-- "✖ MCP ERROR: Error: spawn /Users/USER/.gemini/extensions/oracle/toolbox ENOENT": The Toolbox binary did not download correctly. Ensure you are using Gemini CLI v0.6.0+.
-- "cannot execute binary file": The Toolbox binary did not download correctly. Ensure the correct binary for your OS/Architecture has been downloaded. See [Installing the server](https://mcp-toolbox.dev/documentation/introduction/#install-toolbox) for more information.
+- "✖ Error during discovery for server: MCP error -32000: Connection closed": The database connection has not been established. Ensure your configuration is set correctly.
+- "✖ MCP ERROR: Error: spawn .../toolbox ENOENT": The Toolbox binary did not download correctly. Ensure you are using the latest version of your agent.
+- "cannot execute binary file": The Toolbox binary did not download correctly. Ensure the correct binary for your OS/Architecture has been downloaded.
