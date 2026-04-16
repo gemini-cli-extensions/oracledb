@@ -9,30 +9,15 @@ This section covers connecting to a Oracle Database instance in different deploy
 ### 1. Authentication
 Set the following environment variables before starting the Gemini CLI.
 
-* `ORACLE_USER`: Your Oracle database username.
+* `ORACLE_USERNAME`: Your Oracle database username.
 * `ORACLE_PASSWORD`: Your Oracle database password.
 
 ### 2. Connection Method
-Choose **one** of the following connection methods and set the corresponding environment variables:
-
-#### Method A: Host, Port, and Service Name
-*   `ORACLE_HOST`: The hostname or IP address of your Oracle Database server.
-*   `ORACLE_PORT`: The port number your Oracle Database is listening on.
-*   `ORACLE_SERVICE_NAME`: The service name for the Oracle Database.
-
-#### Method B: TNS Alias
-*   `ORACLE_TNS_ALIAS`: The TNS alias of your Oracle Database from your `tnsnames.ora` file.
-*   `ORACLE_TNS_ADMIN`: The path to the directory containing your `tnsnames.ora` file.
-
-#### Method C: Direct Connection String
-*   `ORACLE_CONNECTION_STRING`: The direct connection string for your Oracle Database (e.g., in EZConnect format).
+*   `ORACLE_CONNECTION_STRING`: The connection string for your Oracle Database (e.g., `host:port/service_name` or TNS alias).
 
 ### 3. Optional Configuration
-
-#### Oracle Wallet / OCI
-If you are connecting to an OCI-based database or using an Oracle Wallet:
 *   `ORACLE_WALLET`: Path to the directory containing your Oracle Wallet files.
-*   `ORACLE_USE_OCI`: Set to `true` to use the OCI (thick client) driver. This is typically required for wallet authentication. When using wallet authentication, the `ORACLE_TNS_ADMIN` variable should be set to the wallet directory path, and you should connect using a TNS alias.
+*   `ORACLE_USE_OCI`: Set to `true` to use the OCI (thick client) driver.
 
 ### 4. Troubleshooting
 *   **Missing Variables**: If a command fails with an error related to a missing configuration, it signifies a missing environment variable. Please review the setup instructions and ensure the necessary variables are set.
@@ -59,10 +44,10 @@ When you create a new Oracle DB instance, or database using the available tools,
 
 1.  **(Optional) Save your conversation:** To avoid losing your progress, save the current session by running the command: `/chat save <your-tag>`
 2.  **Stop the CLI:** Terminate the Gemini CLI.
-3.  **Update Environment Variables:** Set or update your environment variables (e.g. `ORACLE_TNSALIAS`, `ORACLE_USER`) to point to the new resource.
+3.  **Update Environment Variables:** Set or update your environment variables (e.g. `ORACLE_CONNECTION_STRING`, `ORACLE_USERNAME`) to point to the new resource.
 4.  **Restart:** Relaunch the Gemini CLI
 5.  **(Optional) Resume conversation:** Resume your conversation with the command: `/chat resume <your-tag>`
 
 **Important:** Do not assume a connection to a newly created resource is active. Always follow the steps above to reconfigure your connection.
 Instead of prompting the user for these values for specific tool calls, prompt the user to verify reuse of a specific value.
-Make sure to not use the environment variable names like `ORACLE_TNSALIAS`, `${ORACLE_TNSALIAS}`, or `$ORACLE_TNSALIAS`. The value can be found by using command: `echo $ORACLE_USER`.
+Make sure to not use the environment variable names like `ORACLE_CONNECTION_STRING`, `${ORACLE_CONNECTION_STRING}`, or `$ORACLE_CONNECTION_STRING`. The value can be found by using command: `echo $ORACLE_USERNAME`.
