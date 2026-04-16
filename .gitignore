@@ -1,9 +1,0 @@
-**creds.sh**
-toolbox2
-generate-skills-repo.sh
-skills-gen/
-.env
-node_modules/
-dist/
-build/
-.DS_Store
