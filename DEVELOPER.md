@@ -1,13 +1,18 @@
 # DEVELOPER.md
 
-This document provides instructions for setting up your development environment and contributing to the Oracle Database Agent skills project.
+This document provides instructions for setting up your development environment
+and contributing to the OracleDB Gemini CLI Extension project.
 
 ## Prerequisites
 
 Before you begin, ensure you have the following:
 
-1.  **Gemini CLI:** Install the Gemini CLI version v0.6.0 or above. Installation instructions can be found on the official Gemini CLI documentation. You can verify your version by running `gemini --version`.
-2.  **Oracle Database Instance:** For testing data plane skills, you will need access to an active Oracle Database instance.
+1.  **Gemini CLI:** Install the Gemini CLI version v0.6.0 or above. Installation
+    instructions can be found on the official Gemini CLI documentation. You can
+    verify your version by running `gemini --version`.
+2.  **OracleDB Cluster & Instance:** For testing data plane tools, you will need access to an active 
+    Oracle DB instance. We recommend using Public IP to eliminate the need to create and use a workspace
+    within the same VPC network as the database. 
 
 ## Developing the Extension
 
