@@ -1,0 +1,45 @@
+{
+  "name": "oracledb",
+  "version": "0.1.1",
+  "description": "Connect, query, and interact with Oracle Databases and their data within Gemini CLI.",
+  "author": {
+    "name": "Google LLC",
+    "email": "data-cloud-ai-integrations@google.com"
+  },
+  "homepage": "https://cloud.google.com/solutions/oracle",
+  "license": "Apache-2.0",
+  "repository": "https://github.com/gemini-cli-extensions/oracledb",
+  "skills": "./skills/",
+  "userConfig": {
+    "oracle_connection_string": {
+      "title": "Connection String",
+      "description": "Oracle connection string (e.g., host:port/service_name or TNS alias)",
+      "type": "string",
+      "sensitive": false
+    },
+    "oracle_username": {
+      "title": "Username",
+      "description": "Oracle database username",
+      "type": "string",
+      "sensitive": false
+    },
+    "oracle_password": {
+      "title": "Password",
+      "description": "Oracle database password",
+      "type": "string",
+      "sensitive": false
+    },
+    "oracle_wallet": {
+      "title": "Wallet Path",
+      "description": "(Optional) Path to the Oracle Wallet directory",
+      "type": "string",
+      "sensitive": false
+    },
+    "oracle_use_oci": {
+      "title": "Use OCI",
+      "description": "(Optional) Set to true to use the OCI (thick client) driver (Default: false)",
+      "type": "string",
+      "sensitive": false
+    }
+  }
+}
