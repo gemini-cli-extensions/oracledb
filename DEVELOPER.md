@@ -43,6 +43,19 @@ A GitHub Actions workflow (`.github/workflows/presubmit-tests.yml`) is triggered
 
 All skills are currently tested in the [MCP Toolbox GitHub](https://github.com/googleapis/mcp-toolbox).
 
+<<<<<<< remove-packaging-workflow
+### Other GitHub Checks
+
+* **License Header Check:** A workflow ensures all necessary files contain the
+    proper license header.
+* **Conventional Commits:** This repository uses
+    [Release Please](https://github.com/googleapis/release-please) to manage
+    releases. Your commit messages must adhere to the
+    [Conventional Commits](https://www.conventionalcommits.org/) specification.
+* **Dependency Updates:** [Renovate](https://github.com/apps/forking-renovate)
+    is configured to automatically create pull requests for dependency updates.
+
+=======
 The skills themselves are validated using the `skills-validate.yml` workflow.
 
 ### Other GitHub Checks
@@ -50,6 +63,7 @@ The skills themselves are validated using the `skills-validate.yml` workflow.
 - **License Header Check:** A workflow ensures all necessary files contain the proper license header.
 - **Conventional Commits:** This repository uses [Release Please](https://github.com/googleapis/release-please) to manage releases. Your commit messages must adhere to the [Conventional Commits](https://www.conventionalcommits.org/) specification.
 - **Dependency Updates:** [Renovate](https://github.com/apps/forking-renovate) is configured to automatically create pull requests for dependency updates.
+>>>>>>> main
 
 ## Maintainer Information
 
