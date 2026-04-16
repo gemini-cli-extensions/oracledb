@@ -228,7 +228,7 @@ Interact with Oracle Database using natural language:
 
 The following skills are available in this repository:
 
-- [Oracle Database Skills](./skills/SKILL.md) - Use these skills to manage and monitor Oracle databases by executing SQL statements, exploring schema metadata, analyzing query performance, monitoring active sessions and resource consumption, and managing storage and object health.
+- [Oracle Database Skills](./skills/oracledb/SKILL.md) - Use these skills to manage and monitor Oracle databases by executing SQL statements, exploring schema metadata, analyzing query performance, monitoring active sessions and resource consumption, and managing storage and object health.
 
 ## Additional Agent Skills
 
