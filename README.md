@@ -192,6 +192,7 @@ git clone --branch 0.1.1 https://github.com/gemini-cli-extensions/oracledb.git
 **2. Install the skills:**
 
 Choose a location for the skills:
+
 - **Global (all workspaces):** `~/.gemini/antigravity/skills/`
 - **Workspace-specific:** `<workspace-root>/.agents/skills/`
 
@@ -239,11 +240,6 @@ Find additional skills to support your entire software development lifecycle at 
 The following skills are available in this repository:
 
 - [Oracle DB Admin](./skills/admin/SKILL.md) - Use these skills when you need to Backup, recovery, RMAN, Data Guard, redo/undo logs, users, roles, privileges, grants and monitor the progress of long-running operations.
-- [Oracle DB  Health](./skills/monitoring/SKILL.md) - Use these skills when you need to audit database health, identify storage bloat, find invalid indexes, analyze table statistics, and manage maintenance configurations like autovacuum.
-- [Oracle DB Lifecycle](./skills/devops/SKILL.md) - Use these skills when you need to manage the lifecycle of your instances, including performing backups and restores, checking major version upgrade compatibility, and monitoring overall instance status.
-- [Oracle DB  Monitor](./skills/performance/SKILL.md) - Use these skills when you need to troubleshoot performance bottlenecks, analyze query execution plans, identify resource-heavy processes, and monitor system-level PromQL metrics.
-- [Oracle DB Replication](./skills/architecture/SKILL.md) - Use these skills when you need to deploymen models and databse feature setup, RAC, CDB/PDB, Exadata, In-Memory, OCI, ATP/ADW, and settings to ensure environment integrity.
-- [Oracle DB  View Config](./skills/features/SKILL.md) - Use these skills when you need to discover and manage Oracle DB extensions or fine-tune engine-level settings such as Advanced Queuing, DBMS_SCHEDULER, materialized views, DBLinks, APEX and server configuration parameters.
 
 ## Troubleshooting
 
