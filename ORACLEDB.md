@@ -4,7 +4,7 @@
 
 To install this extension, the Gemini CLI version must be v0.6.0 or above. The version can be found by running: `gemini --version`.
 
-## Oracle Database MCP Server (Data Plane: Connecting and Querying)
+## Oracle Database Agent Skills (Data Plane: Connecting and Querying)
 
 This section covers connecting to an Oracle Database instance.
 
