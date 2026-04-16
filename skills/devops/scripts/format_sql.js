@@ -5,7 +5,7 @@ const path = require('path');
 const fs = require('fs');
 const os = require('os');
 
-const toolName = "explain_plan";
+const toolName = "format_sql";
 const configArgs = ["--prebuilt", "oracledb"];
 
 function mergeEnvVars(env) {
