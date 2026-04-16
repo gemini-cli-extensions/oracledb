@@ -1,6 +1,6 @@
 ---
-name: oracledb
-description: skill for performing administrative operations on oracle db
+name: appdev
+description: Skill for application development operations on Oracle DB
 ---
 
 ## Usage
@@ -10,11 +10,7 @@ All scripts can be executed using Node.js. Replace `<param_name>` and `<param_va
 **Bash:**
 `node <skill_dir>/scripts/<script_name>.js '{"<param_name>": "<param_value>"}'`
 
-**PowerShell:**
-`node <skill_dir>/scripts/<script_name>.js '{\"<param_name>\": \"<param_value>\"}'`
-
 ## Scripts
-
 ### execute_sql
 
 Executes any SQL statement.
@@ -62,3 +58,20 @@ List tablespace names, total size, free space, and used percentage to monitor st
 Lists all database objects that are in an invalid state, requiring recompilation (e.g., procedures, functions, views).
 
 ---
+
+### list_connections
+Lists active connections for a specific application or user.
+#### Parameters
+| Name | Type | Description | Required |
+| :--- | :--- | :--- | :--- |
+| app_name | string | The name of the application to filter by. | No |
+
+### check_schema_version
+Checks the version of the schema or migration level.
+
+---
+## Oracle Version Notes (19c vs 26ai)
+- Baseline guidance is valid for Oracle 19c.
+
+## Sources
+- [Oracle Database Development Guide](https://docs.oracle.com/en/database/oracle/oracle-database/19/adfns/index.html)

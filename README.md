@@ -13,6 +13,22 @@ Learn more about [Gemini CLI Extensions](https://github.com/google-gemini/gemini
 
 [form]: https://docs.google.com/forms/d/e/1FAIpQLSfEGmLR46iipyNTgwTmIDJqzkAwDPXxbocpXpUbHXydiN1RTw/viewform?usp=pp_url&entry.157487=oracle-extension
 
+## Table of Contents
+
+- [Why Use Cloud SQL for PostgreSQL Agent Skills?](#why-use-cloud-sql-for-postgresql-agent-skills)
+- [Prerequisites](#prerequisites)
+- [Getting Started](#getting-started)
+  - [Configuration](#configuration)
+  - [Installation & Usage](#installation--usage)
+    - [Gemini CLI](#gemini-cli)
+    - [Claude Code](#claude-code)
+    - [Codex](#codex)
+    - [Antigravity](#antigravity)
+- [Usage Examples](#usage-examples)
+- [Supported Skills](#supported-skills)
+- [Additional Agent Skills](#additional-agent-skills)
+- [Troubleshooting](#troubleshooting)
+
 ## Why Use the Oracle DB Extension?
 
 * **Natural Language to enteprise data  :** Find required Oracle tables and ask transactional or analytical questions in natural language.
@@ -28,7 +44,10 @@ Before you begin, ensure you have the following:
 
 ## Getting Started
 
-### Installation
+### Installation & Usage
+<details open>
+<summary id="gemini-cli">Gemini CLI</summary>
+
 
 To install the extension, use the command:
 
@@ -96,6 +115,123 @@ To start the Gemini CLI, use the following command:
 ```bash
 gemini
 ```
+
+_(Tip: Run `/extensions list` to verify your configuration and active extensions.)_
+
+> [!WARNING]
+> **Changing Instance & Database Connections**
+> Currently, the database connection must be configured before starting the agent and can not be changed during a session.
+> To save and resume conversation history in Gemini CLI use command: `/chat save <tag>` and `/chat resume <tag>`.
+
+</details>
+
+<details>
+<summary id="claude-code">Claude Code</summary>
+
+**1. Set env vars:**
+In your terminal, set your environment vars as described in the [configuration section](#configuration).
+
+**2. Start the agent:**
+
+```bash
+claude
+```
+
+**3. Add the marketplace:**
+
+```bash
+/plugin marketplace add https://github.com/gemini-cli-extensions/oracledb.git#0.4.0
+```
+
+**4. Install the plugin:**
+
+```bash
+/plugin install cloud-sql-postgresql@cloud-sql-postgresql-marketplace
+```
+
+_(Tip: Run `/plugin list` inside Claude Code to verify the plugin is active, or `/reload-plugins` if you just installed it.)_
+
+</details>
+
+<details>
+<summary id="codex">Codex</summary>
+
+**1. Clone the Repo:**
+
+```bash
+git clone --branch 0.4.0 git@github.com:gemini-cli-extensions/oracledb.git
+```
+
+**2. Install the plugin:**
+
+```bash
+mkdir -p ~/.codex/plugins
+cp -R /absolute/path/to/oracledb ~/.codex/plugins/oracledb
+```
+
+**3. Set env vars:**
+Enter your environment vars as described in the [configuration section](#configuration).
+
+**4. Create or update marketplace.json:**
+`~/.agents/plugins/marketplace.json`
+
+```json
+{
+  "name": "my-data-cloud-google-marketplace",
+  "interface": {
+    "displayName": "Google Data Cloud Skills"
+  },
+  "plugins": [
+    {
+      "name": "oracledb",
+      "source": {
+        "source": "local",
+        "path": "./plugins/oracledb"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Database"
+    }
+  ]
+}
+```
+
+_(Tip: Run `codex plugin list` or use the `/plugins` interactive menu to verify your installed plugins.)_
+
+</details>
+
+<details>
+<summary id="antigravity">Antigravity</summary>
+
+**1. Clone the Repo:**
+
+```bash
+git clone --branch 0.4.0 https://github.com/gemini-cli-extensions/oracledb.git
+```
+
+**2. Install the skills:**
+
+Choose a location for the skills:
+- **Global (all workspaces):** `~/.gemini/antigravity/skills/`
+- **Workspace-specific:** `<workspace-root>/.agents/skills/`
+
+Copy the skill folders from the cloned repository's `skills/` directory to your chosen location:
+
+```bash
+cp -R cloud-sql-postgresql/skills/* ~/.gemini/antigravity/skills/
+```
+
+**3. Set env vars:**
+Set your environment vars as described in the [configuration section](#configuration).
+
+_(Tip: Antigravity automatically discovers skills in these directories at the start of a session.)_
+
+</details>
+
+<!-- {x-release-please-end} -->
+
 
 > [!WARNING]
 > **Changing Instance & Database Connections**
