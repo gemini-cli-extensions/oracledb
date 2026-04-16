@@ -2,16 +2,32 @@
   "name": "oracledb",
   "version": "0.1.1",
   "description": "Connect, query, and interact with Oracle Databases and their data within Gemini CLI.",
-  "mcpServers": {
-    "oracle": {
-      "command": "${extensionPath}${/}toolbox",
-      "args": [
-        "--tools-file",
-        "${extensionPath}${/}oracledb.yaml",
-        "--stdio"
-      ],
-      "env": {}
+  "contextFileName": "ORACLEDB.md",
+  "settings": [
+    {
+      "name": "Connection String",
+      "description": "Oracle connection string (e.g., host:port/service_name or TNS alias)",
+      "envVar": "ORACLE_CONNECTION_STRING"
+    },
+    {
+      "name": "Username",
+      "description": "Oracle database username",
+      "envVar": "ORACLE_USERNAME"
+    },
+    {
+      "name": "Password",
+      "description": "Oracle database password",
+      "envVar": "ORACLE_PASSWORD"
+    },
+    {
+      "name": "Wallet Path",
+      "description": "(Optional) Path to the Oracle Wallet directory",
+      "envVar": "ORACLE_WALLET"
+    },
+    {
+      "name": "Use OCI",
+      "description": "(Optional) Set to true to use the OCI (thick client) driver (Default: false)",
+      "envVar": "ORACLE_USE_OCI"
     }
-  },
-  "contextFileName": "ORACLEDB.md"
+  ]
 }

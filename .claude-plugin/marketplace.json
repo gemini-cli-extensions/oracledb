@@ -1,0 +1,16 @@
+{
+  "name": "oracledb-marketplace",
+  "owner": {
+    "name": "Google LLC",
+    "email": "data-cloud-ai-integrations@google.com"
+  },
+  "metadata": {
+    "description": "Agent skills for Oracle Database to query, manage, and monitor databases."
+  },
+  "plugins": [
+    {
+      "name": "oracledb",
+      "source": "./"
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "name": "oracledb",
+  "version": "0.1.1",
+  "description": "Connect, query, and interact with Oracle Databases and their data within Gemini CLI.",
+  "author": {
+    "name": "Google LLC",
+    "email": "data-cloud-ai-integrations@google.com"
+  },
+  "homepage": "https://cloud.google.com/solutions/oracle",
+  "repository": "https://github.com/gemini-cli-extensions/oracledb",
+  "license": "Apache-2.0",
+  "keywords": [
+    "oracle",
+    "database",
+    "sql"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Oracle Database",
+    "shortDescription": "Interact with Oracle Databases.",
+    "developerName": "Google LLC",
+    "category": "Database",
+    "capabilities": [
+      "Read",
+      "Write"
+    ],
+    "defaultPrompt": [
+      "You are a highly skilled database engineer and database administrator. Your purpose is to help the developer build and interact with databases and utilize data context throughout the entire software delivery cycle."
+    ]
+  }
+}
