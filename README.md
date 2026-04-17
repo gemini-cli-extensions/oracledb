@@ -235,11 +235,6 @@ The following skills are available in this repository:
 
 Find additional skills to support your entire software development lifecycle at [github.com/gemini-cli-extensions](https://github.com/gemini-cli-extensions).
 
-## Supported Skills
-
-The following skills are available in this repository:
-
-- [Oracle DB Admin](./skills/admin/SKILL.md) - Use these skills when you need to Backup, recovery, RMAN, Data Guard, redo/undo logs, users, roles, privileges, grants and monitor the progress of long-running operations.
 
 ## Troubleshooting
 
