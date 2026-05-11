@@ -1,0 +1,58 @@
+{
+  "scenarios": [
+    {
+      "id": "oracledb-query-execution",
+      "starting_prompt": "I want to run a query to get insights from my database.",
+      "conversation_plan": "First, ask the agent to execute a simple SELECT query (e.g., SELECT * FROM users LIMIT 5) to verify connectivity and permissions. After the agent provides the results, ask it to execute a more complex query that involves a JOIN between two tables (e.g., SELECT orders.id, users.name FROM orders JOIN users ON orders.user_id = users.id LIMIT 5).",
+      "expected_trajectory": [
+        "execute_sql",
+        "get_query_plan"
+      ],
+      "env": {
+       "ORACLE_CONNECTION_STRING": "${ORACLE_CONNECTION_STRING}",
+        "ORACLE_PASSWORD": "${ORACLE_PASSWORD}",
+        "ORACLE_USERNAME": "${ORACLE_USERNAME}",
+        "ORACLE_WALLET": "${ORACLE_WALLET}",
+        "ORACLE_USE_OCI": "${ORACLE_USE_OCI}"
+      },
+      "kind": "tools",
+      "max_turns": 3
+    },
+    {
+      "id": "oracledb-schema-tables-explore",
+      "starting_prompt": "I want to understand the structure of my database.",
+      "conversation_plan": "First, ask the agent to list tables and active sessions in the instance. After the agent provides the databases, ask it to list the tables specifically for that database.",
+      "expected_trajectory": [
+        "list_active_sessions",
+        "list_tables"
+      ],
+      "env": {
+        "ORACLE_CONNECTION_STRING": "${ORACLE_CONNECTION_STRING}",
+        "ORACLE_PASSWORD": "${ORACLE_PASSWORD}",
+        "ORACLE_USERNAME": "${ORACLE_USERNAME}",
+        "ORACLE_WALLET": "${ORACLE_WALLET}",
+        "ORACLE_USE_OCI": "${ORACLE_USE_OCI}"
+      },
+      "kind": "tools",
+      "max_turns": 3
+    },
+    {
+      "id": "oracledb-performance-check",
+      "starting_prompt": "Our database performance seems degraded.",
+      "conversation_plan": "Start by asking the agent to check for any active queries that are running for a long time (e.g., more than 10 seconds). After the agent responds, follow up by asking if there are any highly fragmented tables that might be causing issues.",
+      "expected_trajectory": [
+        "list_tablespace_usage",
+        "list_top_sql_by_resource"
+      ],
+      "env": {
+        "ORACLE_CONNECTION_STRING": "${ORACLE_CONNECTION_STRING}",
+        "ORACLE_PASSWORD": "${ORACLE_PASSWORD}",
+        "ORACLE_USERNAME": "${ORACLE_USERNAME}",
+        "ORACLE_WALLET": "${ORACLE_WALLET}",
+        "ORACLE_USE_OCI": "${ORACLE_USE_OCI}"
+      },
+      "kind": "tools",
+      "max_turns": 3
+    }
+  ]
+}
