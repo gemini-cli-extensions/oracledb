@@ -1,5 +1,20 @@
 # Changelog
 
+## [0.2.1](https://github.com/gemini-cli-extensions/oracledb/compare/0.2.0...0.2.1) (2026-05-11)
+
+
+### Features
+
+* Add support for HTTPS/TLS listener ([mcp-toolbox#​3126](https://redirect.github.com/googleapis/mcp-toolbox/issues/3126)) ([8bc385d](https://redirect.github.com/googleapis/mcp-toolbox/commit/8bc385d7d6fd9ed2ad13503d9feb503de0b512b1)) ([c18a28b](https://github.com/gemini-cli-extensions/oracledb/commit/c18a28b47feee09332e51263e75a703fac6e1e68))
+
+
+### Bug Fixes
+
+* **mcp:** Implement router-level logger injection for MCP auth ([mcp-toolbox#​3067](https://redirect.github.com/googleapis/mcp-toolbox/issues/3067)) ([ccc7cf5](https://redirect.github.com/googleapis/mcp-toolbox/commit/ccc7cf5ee8a1bacb6b57faf41ae5a1cc3da5299e)) ([c18a28b](https://github.com/gemini-cli-extensions/oracledb/commit/c18a28b47feee09332e51263e75a703fac6e1e68))
+* Allow converting string literal block with list ([mcp-toolbox#​3050](https://redirect.github.com/googleapis/mcp-toolbox/issues/3050)) ([36ab2a9](https://redirect.github.com/googleapis/mcp-toolbox/commit/36ab2a98f9f2d03c27eea389d2281bfc4581ffa1)), closes [mcp-toolbox#​3023](https://redirect.github.com/googleapis/mcp-toolbox/issues/3023) ([c18a28b](https://github.com/gemini-cli-extensions/oracledb/commit/c18a28b47feee09332e51263e75a703fac6e1e68))
+* Prevent test.db from being created during unit tests ([mcp-toolbox#​3042](https://redirect.github.com/googleapis/mcp-toolbox/issues/3042)) ([d10d2ca](https://redirect.github.com/googleapis/mcp-toolbox/commit/d10d2caeb7c9eda7d17d6dbd9f63363b2bc23a7a)) ([c18a28b](https://github.com/gemini-cli-extensions/oracledb/commit/c18a28b47feee09332e51263e75a703fac6e1e68))
+* Remove hardcoded \* allowed origin for sse ([mcp-toolbox#​3054](https://redirect.github.com/googleapis/mcp-toolbox/issues/3054)) ([c4c7bd9](https://redirect.github.com/googleapis/mcp-toolbox/commit/c4c7bd917e686de68e2be866cfe3872c3439efae)) ([c18a28b](https://github.com/gemini-cli-extensions/oracledb/commit/c18a28b47feee09332e51263e75a703fac6e1e68))
+
 ## [0.2.0](https://github.com/gemini-cli-extensions/oracledb/compare/0.1.1...0.2.0) (2026-04-17)
 
 
