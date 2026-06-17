@@ -1,5 +1,25 @@
 # Changelog
 
+## [0.2.3](https://github.com/gemini-cli-extensions/oracledb/compare/0.2.2...0.2.3) (2026-06-17)
+
+
+### Features
+
+* **ci:** Add support for windows/arm64 binary distribution ([mcp-toolbox#​3231](https://redirect.github.com/googleapis/mcp-toolbox/issues/3231)) ([10abf3b](https://redirect.github.com/googleapis/mcp-toolbox/commit/10abf3b9e195a03f535e3807b7df9883899ef7c0)) ([8a6d74a](https://github.com/gemini-cli-extensions/oracledb/commit/8a6d74a51804c5d637fe3243b407ef57c280fc96))
+* **datalineage:** Add Data Lineage integration ([mcp-toolbox#​3285](https://redirect.github.com/googleapis/mcp-toolbox/issues/3285)) ([19353c3](https://redirect.github.com/googleapis/mcp-toolbox/commit/19353c37e17ab1f3599cafa04337a32a7baec1c3)) ([8a6d74a](https://github.com/gemini-cli-extensions/oracledb/commit/8a6d74a51804c5d637fe3243b407ef57c280fc96))
+* **server:** Ignore unknown tools at startup with `--ignore-unknown-tools` flag ([mcp-toolbox#​3353](https://redirect.github.com/googleapis/mcp-toolbox/issues/3353)) ([5f0304f](https://redirect.github.com/googleapis/mcp-toolbox/commit/5f0304f71231cce322ab2a3e458af07b392a06fc)) ([8a6d74a](https://github.com/gemini-cli-extensions/oracledb/commit/8a6d74a51804c5d637fe3243b407ef57c280fc96))
+
+
+### Bug Fixes
+
+* **auth:** Separate Google and Generic MCP OAuth verification ([mcp-toolbox#​3341](https://redirect.github.com/googleapis/mcp-toolbox/issues/3341)) ([dfd66ee](https://redirect.github.com/googleapis/mcp-toolbox/commit/dfd66ee7de6fe9750d932d30bf3b67a2f4d2a176)) ([8a6d74a](https://github.com/gemini-cli-extensions/oracledb/commit/8a6d74a51804c5d637fe3243b407ef57c280fc96))
+* **auth/generic:** Enforce issuer presence in opaque token validation ([mcp-toolbox#​3360](https://redirect.github.com/googleapis/mcp-toolbox/issues/3360)) ([1d8df0d](https://redirect.github.com/googleapis/mcp-toolbox/commit/1d8df0df590383ba56091b6e4d7c37ab7d7d9749)) ([8a6d74a](https://github.com/gemini-cli-extensions/oracledb/commit/8a6d74a51804c5d637fe3243b407ef57c280fc96))
+* **mcp:** Support annotations and metadata within Tools to earlier MCP schemas ([mcp-toolbox#​3300](https://redirect.github.com/googleapis/mcp-toolbox/issues/3300)) ([9a88c72](https://redirect.github.com/googleapis/mcp-toolbox/commit/9a88c72792563e4868c82a4f3be55e6af25c1477)) ([8a6d74a](https://github.com/gemini-cli-extensions/oracledb/commit/8a6d74a51804c5d637fe3243b407ef57c280fc96))
+* **oracle:** Remove trailing semicolons from prebuilt tools ([mcp-toolbox#​3215](https://redirect.github.com/googleapis/mcp-toolbox/issues/3215)) ([fcad02d](https://redirect.github.com/googleapis/mcp-toolbox/commit/fcad02de73ffe9c6ecf29572f0f92674aacbe493)) ([8a6d74a](https://github.com/gemini-cli-extensions/oracledb/commit/8a6d74a51804c5d637fe3243b407ef57c280fc96))
+* **server:** Return null id for batch request rejection ([mcp-toolbox#​3333](https://redirect.github.com/googleapis/mcp-toolbox/issues/3333)) ([0b18d58](https://redirect.github.com/googleapis/mcp-toolbox/commit/0b18d58aea131baceb1c70f300879de8ecdf569e)) ([8a6d74a](https://github.com/gemini-cli-extensions/oracledb/commit/8a6d74a51804c5d637fe3243b407ef57c280fc96))
+* **server/auth:** Centralize tool scopes validation ([mcp-toolbox#​3335](https://redirect.github.com/googleapis/mcp-toolbox/issues/3335)) ([adce4ab](https://redirect.github.com/googleapis/mcp-toolbox/commit/adce4abb27327aae4e9736581df7a544b55c939e)) ([8a6d74a](https://github.com/gemini-cli-extensions/oracledb/commit/8a6d74a51804c5d637fe3243b407ef57c280fc96))
+* **telemetry:** Allow GCP project override ([mcp-toolbox#​2960](https://redirect.github.com/googleapis/mcp-toolbox/issues/2960)) ([3c83ba5](https://redirect.github.com/googleapis/mcp-toolbox/commit/3c83ba5ab1d2ab38369e0b5c47396fabf6ecabef)) ([8a6d74a](https://github.com/gemini-cli-extensions/oracledb/commit/8a6d74a51804c5d637fe3243b407ef57c280fc96))
+
 ## [0.2.2](https://github.com/gemini-cli-extensions/oracledb/compare/0.2.1...0.2.2) (2026-06-17)
 
 
