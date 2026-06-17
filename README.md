@@ -74,8 +74,8 @@ For the latest version, check the [releases page][releases].
 <summary id="antigravity">Antigravity</summary>
 
 You can use either of these two agents for Antigravity:
-- [Antigravity CLI](https://github.com/google-gemini/gemini-cli) version **v1.6.0** or higher
-- [Antigravity 2.0](https://antigravity.google/product/antigravity-2) version **v2.0.0** or higher.
+- [Antigravity CLI](https://github.com/google-gemini/gemini-cli) version **v0.2.2** or higher
+- [Antigravity 2.0](https://antigravity.google/product/antigravity-2) version **v0.2.2** or higher.
 
 <blockquote>
 💡 <strong>Tip — Migrating from Gemini CLI?</strong><br>
@@ -94,7 +94,7 @@ See <a href="https://antigravity.google/docs/gcli-migration">Migrating from Gemi
 **1. Clone the Repo:**
 
 ```bash
-git clone --branch 0.2.1 https://github.com/gemini-cli-extensions/oracledb.git
+git clone --branch 0.2.2 https://github.com/gemini-cli-extensions/oracledb.git
 ```
 
 **2. Install the skills:**
@@ -119,7 +119,7 @@ _(Tip: Antigravity 2.0 automatically discovers skills in these directories at th
 **1. Clone the Repo:**
 
 ```bash
-git clone --branch 0.2.1 https://github.com/gemini-cli-extensions/oracledb.git
+git clone --branch 0.2.2 https://github.com/gemini-cli-extensions/oracledb.git
 ```
 
 **2. Install the skills:**
@@ -153,16 +153,10 @@ In your terminal, set your environment vars as described in the [configuration s
 claude
 ```
 
-**3. Add the marketplace:**
+**3. Install the plugin:**
 
 ```bash
-/plugin marketplace add https://github.com/gemini-cli-extensions/oracledb.git#0.2.1
-```
-
-**4. Install the plugin:**
-
-```bash
-/plugin install oracledb@oracledb-marketplace
+/plugin install oracledb@claude-plugins-official
 ```
 
 _(Tip: Run `/plugin list` inside Claude Code to verify the plugin is active, or `/reload-plugins` if you just installed it.)_
@@ -175,7 +169,7 @@ _(Tip: Run `/plugin list` inside Claude Code to verify the plugin is active, or 
 **1. Clone the Repo:**
 
 ```bash
-git clone --branch 0.2.1 git@github.com:gemini-cli-extensions/oracledb.git
+git clone --branch 0.2.2 git@github.com:gemini-cli-extensions/oracledb.git
 ```
 
 **2. Install the plugin:**
@@ -217,14 +211,17 @@ Enter your environment vars as described in the [configuration section](#configu
 _(Tip: Run `codex plugin list` or use the `/plugins` interactive menu to verify your installed plugins.)_
 
 </details>
+
 ## Installing using [open agent skills tool](https://github.com/vercel-labs/skills)
 
 You can install skills using the `npx skills` command.
 
+**1. Install the skills:**
+
 Run the following command in your terminal to automatically download and register the skills:
 
 ```bash
-npx skills add https://github.com/gemini-cli-extensions/oracledb/tree/0.2.1
+npx skills add https://github.com/gemini-cli-extensions/oracledb/tree/0.2.2
 ```
 
 For detailed info check out the [Skills npm package](https://www.npmjs.com/package/skills).
