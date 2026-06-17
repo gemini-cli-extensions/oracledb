@@ -153,16 +153,10 @@ In your terminal, set your environment vars as described in the [configuration s
 claude
 ```
 
-**3. Add the marketplace:**
+**3. Install the plugin:**
 
 ```bash
-/plugin marketplace add https://github.com/gemini-cli-extensions/oracledb.git#0.2.1
-```
-
-**4. Install the plugin:**
-
-```bash
-/plugin install oracledb@oracledb-marketplace
+/plugin install oracledb@claude-plugins-official
 ```
 
 _(Tip: Run `/plugin list` inside Claude Code to verify the plugin is active, or `/reload-plugins` if you just installed it.)_
@@ -217,9 +211,12 @@ Enter your environment vars as described in the [configuration section](#configu
 _(Tip: Run `codex plugin list` or use the `/plugins` interactive menu to verify your installed plugins.)_
 
 </details>
+
 ## Installing using [open agent skills tool](https://github.com/vercel-labs/skills)
 
 You can install skills using the `npx skills` command.
+
+**1. Install the skills:**
 
 Run the following command in your terminal to automatically download and register the skills:
 
