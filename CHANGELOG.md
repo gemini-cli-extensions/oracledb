@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.5](https://github.com/gemini-cli-extensions/oracledb/compare/0.2.4...0.2.5) (2026-07-02)
+
+
+### Features
+
+* **deps:** update dependency googleapis/mcp-toolbox to v1.6.0 ([#58](https://github.com/gemini-cli-extensions/oracledb/issues/58)) ([23c7de3](https://github.com/gemini-cli-extensions/oracledb/commit/23c7de3e75419f4e5de8d0f939a8176c4eebb8c7))
+
 ## [0.2.4](https://github.com/gemini-cli-extensions/oracledb/compare/0.2.3...0.2.4) (2026-07-02)
 
 
