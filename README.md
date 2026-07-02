@@ -74,8 +74,8 @@ For the latest version, check the [releases page][releases].
 <summary id="antigravity">Antigravity</summary>
 
 You can use either of these two agents for Antigravity:
-- [Antigravity CLI](https://github.com/google-gemini/gemini-cli) version **v0.2.3** or higher
-- [Antigravity 2.0](https://antigravity.google/product/antigravity-2) version **v0.2.3** or higher.
+- [Antigravity CLI](https://github.com/google-gemini/gemini-cli) version **v0.2.4** or higher
+- [Antigravity 2.0](https://antigravity.google/product/antigravity-2) version **v0.2.4** or higher.
 
 <blockquote>
 💡 <strong>Tip — Migrating from Gemini CLI?</strong><br>
@@ -94,7 +94,7 @@ See <a href="https://antigravity.google/docs/gcli-migration">Migrating from Gemi
 **1. Clone the Repo:**
 
 ```bash
-git clone --branch 0.2.3 https://github.com/gemini-cli-extensions/oracledb.git
+git clone --branch 0.2.4 https://github.com/gemini-cli-extensions/oracledb.git
 ```
 
 **2. Install the skills:**
@@ -116,28 +116,16 @@ _(Tip: Antigravity 2.0 automatically discovers skills in these directories at th
 
 #### Antigravity CLI
 
-**1. Clone the Repo:**
+You can install plugins directly from a remote GitHub repository.
+
+**1. Install the plugin:**
 
 ```bash
-git clone --branch 0.2.3 https://github.com/gemini-cli-extensions/oracledb.git
+agy plugin install https://github.com/gemini-cli-extensions/oracledb
 ```
 
-**2. Install the skills:**
-
-Choose a location for the skills:
-- **Global (all workspaces):** `~/.gemini/antigravity-cli/skills/`
-- **Workspace-specific:** `<workspace-root>/.agents/skills/`
-
-Copy the skill folders from the cloned repository's `skills/` directory to your chosen location:
-
-```bash
-cp -R oracledb/skills/* ~/.gemini/antigravity-cli/skills/
-```
-
-**3. Set env vars:**
+**2. Set env vars:**
 Set your environment vars as described in the [configuration section](#configuration).
-
-_(Tip: Antigravity CLI automatically discovers skills in these directories at the start of a session. You can verify they are active by running the `/skills` command in your active session.)_
 
 </details>
 
@@ -197,7 +185,7 @@ You can install skills using the `npx skills` command.
 Run the following command in your terminal to automatically download and register the skills:
 
 ```bash
-npx skills add https://github.com/gemini-cli-extensions/oracledb/tree/0.2.3
+npx skills add https://github.com/gemini-cli-extensions/oracledb/tree/0.2.4
 ```
 
 For detailed info check out the [Skills npm package](https://www.npmjs.com/package/skills).
