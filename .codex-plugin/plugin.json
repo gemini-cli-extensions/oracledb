@@ -1,6 +1,6 @@
 {
   "name": "oracledb",
-  "version": "0.2.3",
+  "version": "0.2.4",
   "description": "Connect, query, and interact with Oracle Databases and their data within Gemini CLI.",
   "author": {
     "name": "Google LLC",
