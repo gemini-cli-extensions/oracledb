@@ -163,7 +163,7 @@ codex plugin marketplace add GoogleCloudPlatform/data-agent-kit
 **2. Install the plugin:**
 
 ```bash
-codex plugin install oracledb@data-agent-kit
+codex plugin add oracledb@data-agent-kit
 ```
 
 **3. Set env vars:**
