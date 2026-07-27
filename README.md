@@ -202,6 +202,9 @@ Interact with Oracle Database using natural language:
 - **Query Data:**
   - "Show me the first 10 rows from the EMPLOYEES table."
   - "What is the total salary by department?"
+- **Generate Data:**
+  - "Please generate and insert 10 rows of sample data into trainer_products."
+  - "Populate the description_vector column. For every row, generate a vector based on the description column using the create_vectors tool."
 - **Monitor and Analyze:**
   - "List all active sessions."
   - "Explain the execution plan for this query: SELECT * FROM orders WHERE order_id = 100"
