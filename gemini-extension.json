@@ -1,7 +1,19 @@
 {
   "name": "oracledb",
   "version": "0.2.6",
-  "description": "Connect, query, and interact with Oracle Databases and their data within Gemini CLI.",
+  "description": "Connect, query, and interact with Oracle Databases and their data.",
+  "mcpServers": {
+    "oracledb": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@toolbox-sdk/server@1.9.0",
+        "--prebuilt",
+        "oracledb",
+        "--stdio"
+      ]
+    }
+  },
   "contextFileName": "ORACLEDB.md",
   "settings": [
     {

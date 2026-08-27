@@ -14,5 +14,55 @@
     "oracle",
     "database",
     "sql"
-  ]
+  ],
+  "extensions": {
+    "com.google.cloud.data.agent-plugins": {
+      "config": [
+        {
+          "key": "ORACLE_CONNECTION_STRING",
+          "title": "Connection String",
+          "description": "Oracle connection string (e.g., host:port/service_name or TNS alias)"
+        },
+        {
+          "key": "ORACLE_USERNAME",
+          "title": "Username",
+          "description": "Oracle database username"
+        },
+        {
+          "key": "ORACLE_PASSWORD",
+          "title": "Password",
+          "description": "Oracle database password"
+        },
+        {
+          "key": "ORACLE_WALLET",
+          "title": "Wallet Path",
+          "description": "(Optional) Path to the Oracle Wallet directory"
+        },
+        {
+          "key": "ORACLE_USE_OCI",
+          "title": "Use OCI",
+          "description": "(Optional) Set to true to use the OCI (thick client) driver (Default: false)"
+        }
+      ],
+      "gemini": {
+        "mcpServerName": "oracledb",
+        "contextFileName": "ORACLEDB.md"
+      },
+      "codex": {
+        "interface": {
+          "displayName": "Oracle Database",
+          "shortDescription": "Interact with Oracle Databases.",
+          "developerName": "Google LLC",
+          "category": "Database",
+          "capabilities": [
+            "Read",
+            "Write"
+          ],
+          "defaultPrompt": [
+            "You are a highly skilled database engineer and database administrator. Your purpose is to help the developer build and interact with databases and utilize data context throughout the entire software delivery cycle."
+          ]
+        }
+      }
+    }
+  }
 }

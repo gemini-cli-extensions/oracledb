@@ -1,0 +1,14 @@
+{
+  "mcpServers": {
+    "oracledb": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@toolbox-sdk/server@1.9.0",
+        "--prebuilt",
+        "oracledb",
+        "--stdio"
+      ]
+    }
+  }
+}
