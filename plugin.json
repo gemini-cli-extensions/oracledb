@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "oracledb",
-  "version": "0.2.6",
+  "version": "0.2.7",
   "description": "Connect, query, and interact with Oracle Databases and their data.",
   "author": {
     "name": "Google LLC",

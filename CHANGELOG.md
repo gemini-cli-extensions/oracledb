@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.2.7](https://github.com/gemini-cli-extensions/oracledb/compare/0.2.6...0.2.7) (2026-09-04)
+
+
+### Features
+
+* **plugin:** migrate from generated skills to the prebuilt MCP server ([#71](https://github.com/gemini-cli-extensions/oracledb/issues/71)) ([bc589fe](https://github.com/gemini-cli-extensions/oracledb/commit/bc589fe2bd006edf4c3a008ed2fb9e068d801c99))
+* **plugin:** support agent plugin spec ([#69](https://github.com/gemini-cli-extensions/oracledb/issues/69)) ([74ab5c8](https://github.com/gemini-cli-extensions/oracledb/commit/74ab5c82e0211f4a0266d1f663051a2ae990b93b))
+
 ## [0.2.6](https://github.com/gemini-cli-extensions/oracledb/compare/0.2.5...0.2.6) (2026-07-27)
 
 
