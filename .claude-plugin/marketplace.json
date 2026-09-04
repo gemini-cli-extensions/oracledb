@@ -5,7 +5,7 @@
     "email": "data-cloud-ai-integrations@google.com"
   },
   "metadata": {
-    "description": "Agent skills for Oracle Database to query, manage, and monitor databases."
+    "description": "Connect, query, and interact with Oracle Databases and their data."
   },
   "plugins": [
     {
